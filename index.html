@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SUCESOS y MÁS | Seguridad Electrónica & Telecomunicaciones — Panamá</title>
+<meta name="description" content="Distribuidores de cámaras CCTV, alarmas, control de acceso, cableado estructurado, cerco eléctrico, UPS, redes y más en Panamá."/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>"/>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="no-select">
+ 
+<!-- ══════════ TOP BAR ══════════ -->
+<div class="topbar">
+  <div class="tb-inner">
+    <div class="ticker">
+      <div class="tick-track">
+        <span>🟢 Mejoramos tu cotización.</span>&nbsp;<span onclick="goPage('contacto')">Conozca cómo aquí ↗</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>🔒 Descubre lo último en soluciones de seguridad.</span>&nbsp;<span onclick="goPage('noticias')">Visita nuestro blog ↗</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>⚡ Instalación certificada TIA/EIA 568.</span>&nbsp;<span onclick="goPage('servicios')">Ver servicios ↗</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>🚀 Control de acceso biométrico para tu empresa.</span>&nbsp;<span onclick="goPage('contacto')">Cotiza ya ↗</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>🟢 Mejoramos tu cotización.</span>&nbsp;<span onclick="goPage('contacto')">Conozca cómo aquí ↗</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>🔒 Descubre lo último en soluciones de seguridad.</span>&nbsp;<span onclick="goPage('noticias')">Visita nuestro blog ↗</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>⚡ Instalación certificada TIA/EIA 568.</span>&nbsp;<span onclick="goPage('servicios')">Ver servicios ↗</span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span>🚀 Control de acceso biométrico para tu empresa.</span>&nbsp;<span onclick="goPage('contacto')">Cotiza ya ↗</span>
+      </div>
+    </div>
+    <div class="tb-links">
+      <div class="tb-link" onclick="goPage('contacto')">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+        Nuestra Ubicación
+      </div>
+      <span class="tb-sep">|</span>
+      <div class="tb-pill" id="tbReg" onclick="openAuth('register')">Registrarse</div>
+      <span class="tb-sep" id="tbOr">o</span>
+      <div class="tb-link" id="tbLog" onclick="openAuth('login')">
+        <svg viewBox="0 0 24 24"><path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z"/></svg>
+        Ingresar
+      </div>
+      <div class="user-wrap" id="userWrap" style="display:none;">
+        <button class="user-btn" onclick="toggleUD()">
+          <div class="user-av" id="uAv">?</div>
+          <span id="uName">Mi Cuenta</span>▾
+        </button>
+        <div class="user-dd" id="userDD">
+          <div class="ud-hdr"><h4 id="udName">—</h4><p id="udEmail">—</p></div>
+          <div class="ud-item" onclick="goPage('perfil');closeUD()"><svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>Mi Perfil</div>
+          <div class="ud-item" onclick="goPage('cotizador');closeUD()"><svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.1 17 7 17h11v-2H7.42l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.47 4H5.21L4.27 2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>Mi Cotización</div>
+          <div class="ud-item danger" onclick="doLogout()"><svg viewBox="0 0 24 24"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>Cerrar Sesión</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- ══════════ MID BAR ══════════ -->
+<div class="midbar">
+  <div class="mb-inner">
+    <a class="logo" href="#" onclick="goPage('home')">
+      <div class="logo-shield">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,5 95,25 95,72 50,98 5,72 5,25" fill="#050810" stroke="#2ECC40" stroke-width="3"/>
+          <ellipse cx="55" cy="42" rx="28" ry="26" fill="#2ECC40"/>
+          <ellipse cx="55" cy="44" rx="22" ry="21" fill="#050810"/>
+          <ellipse cx="58" cy="40" rx="18" ry="18" fill="#2ECC40"/>
+          <path d="M28,68 Q35,50 42,45 Q38,58 32,72 Z" fill="#2ECC40"/>
+          <path d="M35,70 Q42,52 48,48 Q45,60 40,74 Z" fill="#050810"/>
+          <path d="M42,72 Q48,55 53,50 Q51,63 47,76 Z" fill="#2ECC40"/>
+          <path d="M48,73 Q53,58 57,52 Q56,65 53,78 Z" fill="#050810"/>
+          <path d="M53,73 Q58,60 62,55 Q62,68 59,80 Z" fill="#2ECC40"/>
+          <circle cx="72" cy="37" r="3" fill="#050810"/>
+        </svg>
+      </div>
+      <div class="logo-name"><span class="g">sucesos</span>ymas.com<small>Seguridad Electrónica — Panamá</small></div>
+    </a>
+ 
+    <div class="search-bar">
+      <button class="search-cat">Todas las categorías<svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+      <input class="search-inp" id="searchInp" placeholder="Buscar cámaras, alarmas, UPS, cableado, control de acceso..." oninput="doSearch(this.value)"/>
+      <button class="search-btn"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0016 9.5 6.5 6.5 0 109.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></button>
+    </div>
+ 
+    <div class="mb-actions">
+      <button class="btn-reg" id="mbReg" onclick="openAuth('register')">
+        <svg viewBox="0 0 24 24"><path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm-9-2V7H4v3H1v2h3v3h2v-3h3v-2H6zm9 4c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        Registrarse
+      </button>
+      <button class="btn-login" id="mbLog" onclick="openAuth('login')">
+        <svg viewBox="0 0 24 24"><path d="M11 7L9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5-5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8v14z"/></svg>
+        Ingresar
+      </button>
+      <button class="btn-cart" onclick="goPage('cotizador')">
+        <svg viewBox="0 0 24 24"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96C5 16.1 6.1 17 7 17h11v-2H7.42l.03-.12.9-1.63H19c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1 1 0 0023.47 4H5.21L4.27 2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        Cotizar
+        <span class="cart-count" id="cartN">0</span>
+      </button>
+    </div>
+  </div>
+</div>
+ 
+<!-- ══════════ MAIN NAV ══════════ -->
+<nav class="mainnav">
+  <div class="nav-inner">
+    <button class="nav-item act" onclick="navClick(this,'home')">Inicio</button>
+    <button class="nav-item" onclick="navClick(this,'productos')">Productos<svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+    <button class="nav-item" onclick="navClick(this,'servicios')">Servicios</button>
+    <button class="nav-item" onclick="navClick(this,'clientes')">Clientes</button>
+    <button class="nav-item" onclick="navClick(this,'contacto')">Contacto</button>
+    <button class="nav-item" onclick="navClick(this,'noticias')">Noticias</button>
+    <button class="nav-item" onclick="navClick(this,'factura')">Factura</button>
+    <button class="nav-item" onclick="navClick(this,'contacto')">Acerca de Nosotros</button>
+    <button class="nav-wa" onclick="toast('💬 WhatsApp: +507 6000-0000 — ¡Te atendemos ya!')">
+      <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="white"/></svg>
+      +507 6000-0000
+    </button>
+    <button class="nav-cta" onclick="goPage('contacto')">Contáctenos</button>
+  </div>
+</nav>
+ 
+<div class="toast" id="toastEl"></div>
+ 
+<!-- ═══════════════════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════════════════ -->
+<div class="page active" id="pg-home">
+ 
+  <!-- HERO SLIDER -->
+  <div class="hero">
+    <!-- SLIDE 0 -->
+    <div class="slide on" id="sl0">
+      <div class="sl-bg" style="background:linear-gradient(135deg,#050810 0%,#0a1a0a 100%);"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(0,255,65,.1),transparent 60%);"></div>
+      <div class="sl-inner">
+        <div>
+          <div class="sl-eye" style="color:#00FF41;">📹 CÁMARAS DE SEGURIDAD</div>
+          <h1 class="sl-title" style="color:#fff;">Cámaras CCTV<br/><span style="color:#00FF41;filter:drop-shadow(0 0 12px rgba(0,255,65,.6));">con Inteligencia Artificial</span></h1>
+          <p class="sl-desc">Videovigilancia 4K con reconocimiento facial, detección de movimiento avanzada y acceso remoto 24/7 desde cualquier dispositivo en Panamá.</p>
+          <button class="sl-cta" style="background:#00FF41;color:#050810;box-shadow:0 0 20px rgba(0,255,65,.5);" onclick="filterCat('camaras',null)">VER CÁMARAS →</button>
+        </div>
+        <div class="sl-feats">
+          <div class="feat" style="border-left-color:#00FF41;"><div class="feat-ico">🎯</div><div><h4>Localice objetivos con precisión</h4><p>IA con reconocimiento facial avanzado</p></div></div>
+          <div class="feat" style="border-left-color:#00CFFF;"><div class="feat-ico">🔍</div><div><h4>Búsqueda enriquecida</h4><p>Filtros por color, objeto y persona</p></div></div>
+          <div class="feat" style="border-left-color:#9B00FF;"><div class="feat-ico">📱</div><div><h4>Compatibilidad mejorada</h4><p>App iOS y Android gratuita</p></div></div>
+          <div class="feat" style="border-left-color:#FF8C00;"><div class="feat-ico">🛰️</div><div><h4>Fácilmente rastreable</h4><p>Historial de eventos hasta 90 días</p></div></div>
+        </div>
+      </div>
+    </div>
+    <!-- SLIDE 1 -->
+    <div class="slide" id="sl1">
+      <div class="sl-bg" style="background:linear-gradient(135deg,#05080e 0%,#0a0d20 100%);"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(0,207,255,.1),transparent 60%);"></div>
+      <div class="sl-inner">
+        <div>
+          <div class="sl-eye" style="color:#00CFFF;">🔐 CONTROL DE ACCESO</div>
+          <h1 class="sl-title" style="color:#fff;">Acceso Biométrico<br/><span style="color:#00CFFF;">para tu empresa</span></h1>
+          <p class="sl-desc">Huella digital, reconocimiento facial, RFID y barreras vehiculares. Software de gestión centralizado con auditoría en tiempo real.</p>
+          <button class="sl-cta" style="background:#00CFFF;color:#050810;" onclick="filterCat('acceso',null)">VER CONTROL DE ACCESO →</button>
+        </div>
+        <div class="sl-feats">
+          <div class="feat" style="border-left-color:#00CFFF;"><div class="feat-ico">🖐</div><div><h4>Huella Digital</h4><p>Hasta 3,000 usuarios registrados</p></div></div>
+          <div class="feat" style="border-left-color:#9B00FF;"><div class="feat-ico">👁</div><div><h4>Reconocimiento Facial</h4><p>Identificación en menos de 0.5 seg</p></div></div>
+          <div class="feat" style="border-left-color:#00FF41;"><div class="feat-ico">💳</div><div><h4>Tarjeta RFID</h4><p>Compatible con todos los lectores</p></div></div>
+          <div class="feat" style="border-left-color:#FF8C00;"><div class="feat-ico">📊</div><div><h4>Software de Gestión</h4><p>Reportes automáticos y auditoría</p></div></div>
+        </div>
+      </div>
+    </div>
+    <!-- SLIDE 2 -->
+    <div class="slide" id="sl2">
+      <div class="sl-bg" style="background:linear-gradient(135deg,#08050e 0%,#150a20 100%);"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(155,0,255,.12),transparent 60%);"></div>
+      <div class="sl-inner">
+        <div>
+          <div class="sl-eye" style="color:#9B00FF;">🔌 INFRAESTRUCTURA DE RED</div>
+          <h1 class="sl-title" style="color:#fff;">Cableado Cat6 &<br/><span style="color:#9B00FF;">Fibra Óptica</span></h1>
+          <p class="sl-desc">Norma TIA/EIA 568. Certificación Fluke en cada punto. Rack, patch panel, fibra monomodo y documentación completa del proyecto.</p>
+          <button class="sl-cta" style="background:linear-gradient(135deg,#9B00FF,#FF0066);color:#fff;" onclick="filterCat('cableado',null)">VER CABLEADO →</button>
+        </div>
+        <div class="sl-feats">
+          <div class="feat" style="border-left-color:#AAFF00;"><div class="feat-ico">🔌</div><div><h4>Cat6 / Cat6A</h4><p>Hasta 10 Gbps — $35 por punto</p></div></div>
+          <div class="feat" style="border-left-color:#9B00FF;"><div class="feat-ico">💡</div><div><h4>Fibra Óptica</h4><p>Monomodo y multimodo desde $4.50/m</p></div></div>
+          <div class="feat" style="border-left-color:#00FF41;"><div class="feat-ico">✅</div><div><h4>Certificación Fluke</h4><p>Certificación individual por punto</p></div></div>
+          <div class="feat" style="border-left-color:#00CFFF;"><div class="feat-ico">📄</div><div><h4>Documentación</h4><p>Planos y garantía incluidos</p></div></div>
+        </div>
+      </div>
+    </div>
+    <!-- SLIDE 3 -->
+    <div class="slide" id="sl3">
+      <div class="sl-bg" style="background:linear-gradient(135deg,#100505 0%,#200a05 100%);"></div>
+      <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(255,69,0,.12),transparent 60%);"></div>
+      <div class="sl-inner">
+        <div>
+          <div class="sl-eye" style="color:#FF4500;">⚡ CERCO & ALARMAS</div>
+          <h1 class="sl-title" style="color:#fff;">Cerco Eléctrico &<br/><span style="color:#FF4500;">Alarmas Inteligentes</span></h1>
+          <p class="sl-desc">Protección perimetral con alto voltaje. Sensores PIR, humo y gas con central de monitoreo 24/7 y alertas instantáneas a tu celular.</p>
+          <button class="sl-cta" style="background:linear-gradient(135deg,#FF4500,#FF0066);color:#fff;" onclick="filterCat('cerco',null)">VER MÁS →</button>
+        </div>
+        <div class="sl-feats">
+          <div class="feat" style="border-left-color:#FF4500;"><div class="feat-ico">⚡</div><div><h4>Energizadores certificados</h4><p>Alto voltaje, bajo amperaje, legal</p></div></div>
+          <div class="feat" style="border-left-color:#FF8C00;"><div class="feat-ico">🚨</div><div><h4>Alarmas inteligentes</h4><p>Central de monitoreo 24/7</p></div></div>
+          <div class="feat" style="border-left-color:#FFE600;"><div class="feat-ico">📱</div><div><h4>Alertas en tiempo real</h4><p>Notificaciones directas al celular</p></div></div>
+          <div class="feat" style="border-left-color:#00FF41;"><div class="feat-ico">🛡️</div><div><h4>Instalación garantizada</h4><p>1 año de garantía en mano de obra</p></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="sl-dots">
+      <div class="sl-dot on" onclick="goSl(0)"></div>
+      <div class="sl-dot" onclick="goSl(1)"></div>
+      <div class="sl-dot" onclick="goSl(2)"></div>
+      <div class="sl-dot" onclick="goSl(3)"></div>
+    </div>
+    <button class="sl-arr prev" onclick="prevSl()"><svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg></button>
+    <button class="sl-arr next" onclick="nextSl()"><svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg></button>
+  </div>
+ 
+  <!-- TRUST -->
+  <div class="trust">
+    <div class="trust-inner">
+      <div class="trust-item" onclick="toast('🚚 Instalación en toda la República de Panamá')"><div class="t-ico" style="background:rgba(0,255,65,.1);border:1px solid rgba(0,255,65,.2);"><svg viewBox="0 0 24 24" width="18" height="18" fill="#00FF41"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm-1.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div><div><h4>Instalación a Domicilio</h4><p>Cubrimos toda la República de Panamá</p></div></div>
+      <div class="trust-item" onclick="toast('🛡️ Garantía 1 año en mano de obra y materiales')"><div class="t-ico" style="background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.2);"><svg viewBox="0 0 24 24" width="18" height="18" fill="#00CFFF"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 4l6 2.18V11c0 3.73-2.48 7.22-6 8.63-3.52-1.41-6-4.9-6-8.63V7.18L12 5z"/></svg></div><div><h4>Garantía 1 Año</h4><p>En mano de obra y equipos originales</p></div></div>
+      <div class="trust-item" onclick="toast('📞 Llama ahora: +507 775-0000')"><div class="t-ico" style="background:rgba(255,69,0,.1);border:1px solid rgba(255,69,0,.2);"><svg viewBox="0 0 24 24" width="18" height="18" fill="#FF4500"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div><h4>Soporte 24/7</h4><p>+507 6000-0000 — WhatsApp activo</p></div></div>
+      <div class="trust-item" onclick="goPage('noticias')"><div class="t-ico" style="background:rgba(155,0,255,.1);border:1px solid rgba(155,0,255,.2);"><svg viewBox="0 0 24 24" width="18" height="18" fill="#9B00FF"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div><div><h4>+500 Clientes</h4><p>12 años de experiencia en Panamá</p></div></div>
+    </div>
+  </div>
+ 
+  <!-- ══ CATEGORÍAS DE PRODUCTOS — Inspired by reference image ══ -->
+  <div class="cat-section">
+    <div class="cat-title-wrap">
+      <div class="line"></div>
+      <h2>CATEGORÍAS DE PRODUCTOS</h2>
+    </div>
+    <div class="cat-grid container">
+      <!-- Bateria / UPS -->
+      <div class="cat-card" onclick="filterCat('ups',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+        </div>
+        <div><div class="cat-name">Batería / UPS</div><div class="cat-count">12 productos</div></div>
+      </div>
+      <!-- Cámaras de Seguridad -->
+      <div class="cat-card" onclick="filterCat('camaras',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+        </div>
+        <div><div class="cat-name">Cámaras de Seguridad</div><div class="cat-count">24 productos</div></div>
+      </div>
+      <!-- Circuito Cerrado CCTV -->
+      <div class="cat-card" onclick="filterCat('nvr',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M4 6h18V4H4c-1.1 0-2 .9-2 2v11H0v3h14v-3H4V6zm19 2h-6c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1V9c0-.55-.45-1-1-1zm-1 9h-4v-7h4v7z"/></svg>
+        </div>
+        <div><div class="cat-name">Circuito Cerrado (CCTV)</div><div class="cat-count">18 productos</div></div>
+      </div>
+      <!-- Computación / Electrónica -->
+      <div class="cat-card" onclick="filterCat('comp',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+        </div>
+        <div><div class="cat-name">Computación / Electrónica</div><div class="cat-count">15 productos</div></div>
+      </div>
+      <!-- Redes y Telecomunicaciones -->
+      <div class="cat-card" onclick="filterCat('redes',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+        </div>
+        <div><div class="cat-name">Redes y Telecomunicaciones</div><div class="cat-count">20 productos</div></div>
+      </div>
+      <!-- Cableado de Red -->
+      <div class="cat-card" onclick="filterCat('cableado',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M5 3H3v4h2V5h4V3H5zm12 0h-4v2h4v2h2V3h-2zM5 19H3v4h4v-2H5v-2zm14 2h-4v2h4v-4h-2v2zM1 8v8h2V8H1zm20 0v8h2V8h-2zM8 3v2h8V3H8zm0 16v2h8v-2H8zM3 11h18v2H3v-2z"/></svg>
+        </div>
+        <div><div class="cat-name">Cableado de Red</div><div class="cat-count">16 productos</div></div>
+      </div>
+      <!-- Herramientas -->
+      <div class="cat-card" onclick="filterCat('herramientas',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+        </div>
+        <div><div class="cat-name">Herramientas</div><div class="cat-count">8 productos</div></div>
+      </div>
+      <!-- Cerco Eléctrico -->
+      <div class="cat-card" onclick="filterCat('cerco',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3zm8-13l-3 6h2l-3 6 8-9h-4l3-3z"/></svg>
+        </div>
+        <div><div class="cat-name">Cerco Eléctrico</div><div class="cat-count">10 productos</div></div>
+      </div>
+      <!-- Alarma de Intrusión -->
+      <div class="cat-card" onclick="filterCat('alarmas',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+        </div>
+        <div><div class="cat-name">Alarma de Intrusión</div><div class="cat-count">14 productos</div></div>
+      </div>
+      <!-- Control de Acceso -->
+      <div class="cat-card" onclick="filterCat('acceso',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg>
+        </div>
+        <div><div class="cat-name">Control de Acceso</div><div class="cat-count">11 productos</div></div>
+      </div>
+      <!-- Motor para Portón -->
+      <div class="cat-card" onclick="filterCat('motor',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M19 3H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 6H5V5h14v4zM3 15h2v-2H3v2zm4 0h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zM3 19h2v-2H3v2zm4 0h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2z"/></svg>
+        </div>
+        <div><div class="cat-name">Motor para Portón</div><div class="cat-count">7 productos</div></div>
+      </div>
+      <!-- Publicidad Digital Interactiva -->
+      <div class="cat-card" onclick="filterCat('digital',null)">
+        <div class="cat-ico-wrap">
+          <svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14zM8 15c0-1.66 1.34-3 3-3 .35 0 .69.07 1 .18V6h5v2h-3v7.03c-.02 1.64-1.35 2.97-3 2.97-1.66 0-3-1.34-3-3z"/></svg>
+        </div>
+        <div><div class="cat-name">Publicidad Digital Interactiva</div><div class="cat-count">6 productos</div></div>
+      </div>
+      <!-- Zona de Remate -->
+      <div class="cat-card" onclick="filterCat('remate',null)">
+        <div class="cat-ico-wrap" style="background:rgba(255,69,0,.15);border-color:rgba(255,69,0,.3);">
+          <svg viewBox="0 0 24 24" fill="#FF4500"><path d="M7 2v11h3v9l7-12h-4l4-8H7zm0 0"/><path d="M16.5 5.5L15 4l-1.5 1.5L12 4l-1.5 1.5L9 4 7.5 5.5 9 7H15l1.5-1.5z" fill="#FF4500"/></svg>
+        </div>
+        <div><div class="cat-name" style="color:#FF4500;">Zona de Remate 🔥</div><div class="cat-count" style="color:#FF8C00;">Ofertas hasta -40%</div></div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- PRODUCTS WITH FILTER -->
+  <div class="section container">
+    <div class="sec-hdr">
+      <div class="sec-tag">🏷️ Catálogo</div>
+      <h2 id="prodTitle">Productos <span class="hl-g">Destacados</span></h2>
+      <p id="prodSubt">Equipos de seguridad electrónica de las mejores marcas — precios en Panamá 2026</p>
+    </div>
+ 
+    <div class="prod-filter" id="prodFilter">
+      <div class="pf-pill on" onclick="filterCat('todo',this)">🔒 Todo</div>
+      <div class="pf-pill" onclick="filterCat('camaras',this)">📹 Cámaras</div>
+      <div class="pf-pill" onclick="filterCat('alarmas',this)">🚨 Alarmas</div>
+      <div class="pf-pill" onclick="filterCat('acceso',this)">🔐 Control Acceso</div>
+      <div class="pf-pill" onclick="filterCat('cableado',this)">🔌 Cableado Cat6</div>
+      <div class="pf-pill" onclick="filterCat('fibra',this)">💡 Fibra Óptica</div>
+      <div class="pf-pill" onclick="filterCat('cerco',this)">⚡ Cerco</div>
+      <div class="pf-pill" onclick="filterCat('redes',this)">🌐 Redes Wi-Fi</div>
+      <div class="pf-pill" onclick="filterCat('gps',this)">🛰️ GPS</div>
+      <div class="pf-pill" onclick="filterCat('nvr',this)">🗄️ NVR/DVR</div>
+      <div class="pf-pill" onclick="filterCat('ups',this)">🔋 UPS/Batería</div>
+      <div class="pf-pill" onclick="filterCat('motor',this)">🚗 Motores</div>
+      <div class="pf-pill" onclick="filterCat('herramientas',this)">🔧 Herramientas</div>
+      <div class="pf-pill" onclick="filterCat('digital',this)">📺 Digital</div>
+      <div class="pf-pill" onclick="filterCat('remate',this)" style="color:#FF4500;border-color:rgba(255,69,0,.3);">🔥 Remate</div>
+    </div>
+ 
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <span id="prodCountTxt" style="font-size:.8rem;color:var(--muted);"></span>
+      <span id="prodCount" style="font-size:.82rem;color:var(--g);font-weight:700;"></span>
+    </div>
+    <div class="pgrid" id="prodGrid"></div>
+    <div style="text-align:center;margin-top:22px;">
+      <button onclick="goPage('productos')" style="padding:11px 30px;background:transparent;border:2px solid var(--g2);color:var(--g);border-radius:7px;font-size:.82rem;font-weight:700;cursor:pointer;transition:all .2s;letter-spacing:.5px;" onmouseover="this.style.background='var(--g2)';this.style.color='var(--dark)'" onmouseout="this.style.background='transparent';this.style.color='var(--g)'">VER TODO EL CATÁLOGO →</button>
+    </div>
+  </div>
+ 
+  <!-- PROMO BANNERS -->
+  <div class="section alt">
+    <div class="container">
+      <div class="promo-grid">
+        <div class="promo p1" onclick="filterCat('acceso',null);goPage('home')">
+          <div class="promo-dec">🔐</div>
+          <div class="promo-tag">⭐ Especialidad Premium</div>
+          <h3>Control de Acceso Avanzado</h3>
+          <p>Biométrico, facial, RFID, barreras vehiculares y software centralizado para tu empresa.</p>
+          <div class="p-tags">
+            <span class="ptag">🖐 Huella</span><span class="ptag">👁 Facial</span><span class="ptag">💳 RFID</span><span class="ptag">🚗 Barrera</span><span class="ptag">📊 Software</span>
+          </div>
+          <button class="promo-btn">Ver Control de Acceso →</button>
+        </div>
+        <div class="promo p2" onclick="filterCat('cableado',null);goPage('home')">
+          <div class="promo-dec">🔌</div>
+          <div class="promo-tag">🏗️ Infraestructura</div>
+          <h3>Cableado Cat6 & Fibra Óptica</h3>
+          <p>Norma TIA/EIA 568. Certificación Fluke. Rack & Patch Panel. Documentación completa.</p>
+          <div class="p-tags">
+            <span class="ptag">🔌 Cat6</span><span class="ptag">💡 Fibra</span><span class="ptag">🗄 Rack</span><span class="ptag">✅ Fluke</span><span class="ptag">⚡ PoE</span>
+          </div>
+          <button class="promo-btn">Ver Cableado Estructurado →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- SERVICIOS HOME -->
+  <div class="section container">
+    <div class="sec-hdr"><div class="sec-tag f">⚙️ Servicios</div><h2>Todos Nuestros <span class="hl-f">Servicios</span></h2><p>Instalación, mantenimiento y soporte de sistemas de seguridad electrónica en toda Panamá.</p></div>
+    <div class="svc-grid">
+      <div class="svc-card sc-g" onclick="goPage('servicios')"><div class="svc-ico" style="background:rgba(0,255,65,.1);border:1px solid rgba(0,255,65,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#2ECC40"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg></div><h3>Cámaras CCTV</h3><p>HD/4K con acceso remoto 24h.</p><div class="svc-price">Desde $299</div><button class="svc-btn" onclick="filterCat('camaras',null)">Ver más</button></div>
+      <div class="svc-card sc-e" onclick="goPage('servicios')"><div class="svc-ico" style="background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#00CFFF"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div><h3>Alarmas</h3><p>Sensores y monitoreo 24/7.</p><div class="svc-price">Desde $199</div><button class="svc-btn" onclick="filterCat('alarmas',null)">Ver más</button></div>
+      <div class="svc-card sc-p" onclick="goPage('servicios')"><div class="svc-ico" style="background:rgba(155,0,255,.1);border:1px solid rgba(155,0,255,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#9B00FF"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg></div><h3>Control de Acceso</h3><p>Biométrico, RFID, portones.</p><div class="svc-price">Desde $380</div><button class="svc-btn" onclick="filterCat('acceso',null)">Ver más</button></div>
+      <div class="svc-card sc-l" onclick="goPage('servicios')"><div class="svc-ico" style="background:rgba(170,255,0,.1);border:1px solid rgba(170,255,0,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#AAFF00"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3zm8-13l-3 6h2l-3 6 8-9h-4l3-3z"/></svg></div><h3>Cableado Cat6</h3><p>TIA/EIA 568, cert. Fluke.</p><div class="svc-price">$35/punto</div><button class="svc-btn" onclick="filterCat('cableado',null)">Ver más</button></div>
+      <div class="svc-card sc-e" onclick="goPage('servicios')"><div class="svc-ico" style="background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#00CFFF"><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg></div><h3>Fibra Óptica</h3><p>Monomodo y multimodo.</p><div class="svc-price">$4.50/metro</div><button class="svc-btn" onclick="filterCat('fibra',null)">Ver más</button></div>
+      <div class="svc-card sc-y" onclick="goPage('servicios')"><div class="svc-ico" style="background:rgba(255,230,0,.1);border:1px solid rgba(255,230,0,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#FFE600"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></div><h3>Cerco Eléctrico</h3><p>Alto voltaje, bajo amperaje.</p><div class="svc-price">Desde $450</div><button class="svc-btn" onclick="filterCat('cerco',null)">Ver más</button></div>
+      <div class="svc-card sc-g" onclick="goPage('servicios')"><div class="svc-ico" style="background:rgba(0,255,65,.1);border:1px solid rgba(0,255,65,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#2ECC40"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg></div><h3>Redes Wi-Fi</h3><p>Ubiquiti Wi-Fi 6, VLAN.</p><div class="svc-price">Desde $350</div><button class="svc-btn" onclick="filterCat('redes',null)">Ver más</button></div>
+      <div class="svc-card sc-f" onclick="goPage('servicios')"><div class="svc-ico" style="background:rgba(255,69,0,.1);border:1px solid rgba(255,69,0,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#FF4500"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><h3>GPS Vehicular</h3><p>Monitoreo flota tiempo real.</p><div class="svc-price">$85/mes</div><button class="svc-btn" onclick="filterCat('gps',null)">Ver más</button></div>
+    </div>
+  </div>
+ 
+  <!-- NOTICIAS / COLLAGE -->
+  <div class="section alt">
+    <div class="container">
+      <div class="sec-hdr"><div class="sec-tag e">📰 Proyectos</div><h2>Trabajos <span class="hl-e">Realizados</span></h2><p>Proyectos recientes en empresas, residencias e instituciones de Panamá.</p></div>
+      <div class="news-grid">
+        <div class="ncard cg" onclick="goPage('noticias')">
+          <div class="nthumb nt-lg tg"><svg viewBox="0 0 24 24" width="60" height="60" fill="#2ECC40" opacity=".6"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg></div>
+          <div class="nbody"><div class="ntag">🏆 Proyecto Destacado — Marzo 2026</div><h3>48 Cámaras 4K — Centro Comercial Chiriquí</h3><p>Sistema NVR completo con cobertura total del estacionamiento. Reducción del 95% en incidentes de seguridad en los primeros 3 meses de operación.</p><div class="ndate">📅 Marzo 2026 — David, Chiriquí</div></div>
+        </div>
+        <div class="ncol">
+          <div class="ncard cp" onclick="goPage('noticias')"><div class="nthumb nt-sm tp"><svg viewBox="0 0 24 24" width="36" height="36" fill="#9B00FF" opacity=".7"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2z"/></svg></div><div class="nbody"><div class="ntag">✅ Control Acceso</div><h3>Biométricos + Torniquetes — Planta 200 emp.</h3><div class="ndate">📅 Feb 2026</div></div></div>
+          <div class="ncard" style="border-color:rgba(170,255,0,.1);" onclick="goPage('noticias')"><div class="nthumb nt-sm tl"><svg viewBox="0 0 24 24" width="36" height="36" fill="#AAFF00" opacity=".7"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></div><div class="nbody"><div class="ntag" style="color:#AAFF00;">🔧 Cableado Cat6</div><h3>Red estructurada — Edificio 6 pisos</h3><div class="ndate">📅 Feb 2026</div></div></div>
+          <div class="ncard ce" onclick="goPage('noticias')"><div class="nthumb nt-sm te"><svg viewBox="0 0 24 24" width="36" height="36" fill="#00CFFF" opacity=".7"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9z"/></svg></div><div class="nbody"><div class="ntag">🌐 Wi-Fi</div><h3>Wi-Fi Ubiquiti — 80 usuarios David</h3><div class="ndate">📅 Ene 2026</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- UBICACIÓN -->
+  <div class="section" style="background:#0a0f1a;">
+    <div class="container">
+      <div class="sec-hdr"><div class="sec-tag">📍 Visítanos</div><h2>Nuestra <span class="hl-g">Ubicación</span></h2></div>
+      <div class="loc-grid">
+        <div class="loc-card">
+          <h3>📍 Información de Contacto</h3>
+          <div class="loc-row"><div class="loc-ico" style="background:rgba(0,255,65,.1);border:1px solid rgba(0,255,65,.2);"><svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div class="loc-txt"><h4>Oficina Principal</h4><p>Av. Central, C.C. Los Andes, Local 14<br/>David, Chiriquí, República de Panamá</p></div></div>
+          <div class="loc-row"><div class="loc-ico" style="background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.2);"><svg viewBox="0 0 24 24" fill="#00CFFF"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div class="loc-txt"><h4>Teléfonos</h4><p>+507 775-0000 (Oficina)<br/>+507 6000-0000 (WhatsApp 24/7)</p></div></div>
+          <div class="loc-row"><div class="loc-ico" style="background:rgba(170,255,0,.1);border:1px solid rgba(170,255,0,.2);"><svg viewBox="0 0 24 24" fill="#AAFF00"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><div class="loc-txt"><h4>Email</h4><p>info@sucesosymas.com<br/>ventas@sucesosymas.com</p></div></div>
+          <div class="loc-row" style="margin-bottom:0"><div class="loc-ico" style="background:rgba(155,0,255,.1);border:1px solid rgba(155,0,255,.2);"><svg viewBox="0 0 24 24" fill="#9B00FF"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div><div class="loc-txt"><h4>Horario</h4><p>Lun–Vie: 8:00 AM – 6:00 PM<br/>Sábado: 9:00 AM – 2:00 PM</p></div></div>
+        </div>
+        <div class="map-box">
+          <div class="map-grid"></div>
+          <div class="map-pin">📍</div>
+          <div class="map-lbl">DAVID, CHIRIQUÍ</div>
+          <div class="map-sub">República de Panamá — Av. Central, C.C. Los Andes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- FOOTER -->
+  <footer>
+    <div class="container ft-grid">
+      <div class="ft-brand">
+        <a class="logo" href="#" onclick="goPage('home')" style="margin-bottom:8px;display:inline-flex;">
+          <div class="logo-shield" style="width:38px;height:38px;"><svg viewBox="0 0 100 100" width="26" height="26"><polygon points="50,5 95,25 95,72 50,98 5,72 5,25" fill="#050810" stroke="#2ECC40" stroke-width="3"/><ellipse cx="55" cy="42" rx="28" ry="26" fill="#2ECC40"/><ellipse cx="55" cy="44" rx="22" ry="21" fill="#050810"/><ellipse cx="58" cy="40" rx="18" ry="18" fill="#2ECC40"/><path d="M42,72 Q48,55 53,50 Q51,63 47,76 Z" fill="#2ECC40"/><path d="M53,73 Q58,60 62,55 Q62,68 59,80 Z" fill="#2ECC40"/></svg></div>
+          <div class="logo-name"><span class="g">sucesos</span>ymas.com<small>Seguridad Electrónica</small></div>
+        </a>
+        <p>Más de 12 años protegiendo hogares y empresas en Panamá con tecnología de punta en seguridad electrónica y telecomunicaciones.</p>
+        <div class="ft-social">
+          <div class="ft-soc" onclick="toast('📘 Facebook: sucesosymas')"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></div>
+          <div class="ft-soc" onclick="toast('📸 Instagram: @sucesosymas')"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#050810"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#050810" stroke-width="2"/></svg></div>
+          <div class="ft-soc" onclick="toast('💬 WhatsApp: +507 6000-0000')"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></div>
+          <div class="ft-soc" onclick="toast('▶️ YouTube: Sucesos y Más')"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#050810"/></svg></div>
+        </div>
+      </div>
+      <div class="ft-col"><h4>Navegación</h4>
+        <a onclick="goPage('home')">🏠 Inicio</a>
+        <a onclick="goPage('productos')">📦 Productos</a>
+        <a onclick="goPage('servicios')">⚙️ Servicios</a>
+        <a onclick="goPage('clientes')">👥 Clientes</a>
+        <a onclick="goPage('contacto')">📞 Contacto</a>
+        <a onclick="goPage('factura')">🧾 Factura</a>
+      </div>
+      <div class="ft-col"><h4>Categorías</h4>
+        <a onclick="filterCat('camaras',null)">📹 Cámaras CCTV</a>
+        <a onclick="filterCat('acceso',null)">🔐 Control Acceso</a>
+        <a onclick="filterCat('cableado',null)">🔌 Cableado Cat6</a>
+        <a onclick="filterCat('alarmas',null)">🚨 Alarmas</a>
+        <a onclick="filterCat('cerco',null)">⚡ Cerco Eléctrico</a>
+        <a onclick="filterCat('ups',null)">🔋 UPS / Batería</a>
+        <a onclick="filterCat('redes',null)">🌐 Redes Wi-Fi</a>
+        <a onclick="filterCat('remate',null)" style="color:#FF4500;">🔥 Zona de Remate</a>
+      </div>
+      <div class="ft-col"><h4>Contacto</h4>
+        <a onclick="toast('📍 David, Chiriquí, Panamá')">📍 David, Chiriquí</a>
+        <a onclick="toast('📞 +507 775-0000')">📞 775-0000</a>
+        <a onclick="toast('💬 +507 6000-0000')">💬 WhatsApp 24/7</a>
+        <a onclick="goPage('contacto')">📧 info@sucesosymas.com</a>
+        <a onclick="goPage('contacto')">📨 Enviar mensaje</a>
+      </div>
+    </div>
+    <div class="container ft-bottom">
+      <p>© 2026 <a onclick="goPage('home')">sucesosymas.com</a>. Todos los derechos reservados. 🇵🇦 David, Chiriquí, República de Panamá</p>
+      <p>Diseñado por <a onclick="toast('🛡️ Equipo de Especialistas en Tecnología')">Especialistas en Tecnología</a></p>
+    </div>
+  </footer>
+</div>
+ 
+<!-- ════ PRODUCTOS PAGE ════ -->
+<div class="page" id="pg-productos">
+  <div class="page-banner"><div class="bc"><span onclick="goPage('home')">Inicio</span> › Productos</div><h1><span style="color:var(--g)">Catálogo</span> Completo</h1><p>Hikvision · Dahua · Ubiquiti · ZKTeco · Paradox · Nemtek · Corning · AMP · Teltonika y más</p></div>
+  <div class="section container">
+    <div class="prod-filter" id="prodFilter2">
+      <div class="pf-pill on" onclick="filterCat2('todo',this)">🔒 Todo</div>
+      <div class="pf-pill" onclick="filterCat2('camaras',this)">📹 Cámaras</div>
+      <div class="pf-pill" onclick="filterCat2('alarmas',this)">🚨 Alarmas</div>
+      <div class="pf-pill" onclick="filterCat2('acceso',this)">🔐 Acceso</div>
+      <div class="pf-pill" onclick="filterCat2('cableado',this)">🔌 Cableado</div>
+      <div class="pf-pill" onclick="filterCat2('fibra',this)">💡 Fibra</div>
+      <div class="pf-pill" onclick="filterCat2('cerco',this)">⚡ Cerco</div>
+      <div class="pf-pill" onclick="filterCat2('redes',this)">🌐 Wi-Fi</div>
+      <div class="pf-pill" onclick="filterCat2('gps',this)">🛰️ GPS</div>
+      <div class="pf-pill" onclick="filterCat2('nvr',this)">🗄️ NVR</div>
+      <div class="pf-pill" onclick="filterCat2('ups',this)">🔋 UPS</div>
+      <div class="pf-pill" onclick="filterCat2('motor',this)">🚗 Motores</div>
+      <div class="pf-pill" onclick="filterCat2('herramientas',this)">🔧 Herramientas</div>
+      <div class="pf-pill" onclick="filterCat2('comp',this)">💻 Computación</div>
+      <div class="pf-pill" onclick="filterCat2('digital',this)">📺 Digital</div>
+      <div class="pf-pill" onclick="filterCat2('remate',this)" style="color:#FF4500;border-color:rgba(255,69,0,.3);">🔥 Remate</div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <span id="prodCountTxt2" style="font-size:.8rem;color:var(--muted);"></span>
+      <span id="prodCount2" style="font-size:.82rem;color:var(--g);font-weight:700;"></span>
+    </div>
+    <div class="pgrid" id="prodGrid2"></div>
+  </div>
+</div>
+ 
+<!-- ════ SERVICIOS PAGE ════ -->
+<div class="page" id="pg-servicios">
+  <div class="page-banner"><div class="bc"><span onclick="goPage('home')">Inicio</span> › Servicios</div><h1>Nuestros <span style="color:var(--g)">Servicios</span></h1><p>12 servicios especializados para toda la República de Panamá</p></div>
+  <div class="section container">
+    <div class="sec-hdr"><div class="sec-tag">🔒 Seguridad</div><h2>Servicios de <span class="hl-g">Seguridad Electrónica</span></h2></div>
+    <div class="svc-grid">
+      <div class="svc-card sc-g" onclick="filterCat('camaras',null);goPage('home')"><div class="svc-ico" style="background:rgba(0,255,65,.1);border:1px solid rgba(0,255,65,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#2ECC40"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg></div><h3>Cámaras CCTV</h3><p>HD/4K, visión nocturna, DVR/NVR, app remota 24h.</p><div class="svc-price">Desde $299</div><button class="svc-btn" onclick="goPage('contacto')">Cotizar</button></div>
+      <div class="svc-card sc-e" onclick="filterCat('alarmas',null);goPage('home')"><div class="svc-ico" style="background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#00CFFF"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div><h3>Alarmas Inteligentes</h3><p>PIR, humo, gas, central monitoreo 24/7.</p><div class="svc-price">Desde $199</div><button class="svc-btn" onclick="goPage('contacto')">Cotizar</button></div>
+      <div class="svc-card sc-y" onclick="filterCat('cerco',null);goPage('home')"><div class="svc-ico" style="background:rgba(255,230,0,.1);border:1px solid rgba(255,230,0,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#FFE600"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></div><h3>Cerco Eléctrico</h3><p>Alto voltaje, bajo amperaje, integración alarma.</p><div class="svc-price">Desde $450</div><button class="svc-btn" onclick="goPage('contacto')">Cotizar</button></div>
+      <div class="svc-card sc-p" onclick="filterCat('acceso',null);goPage('home')"><div class="svc-ico" style="background:rgba(155,0,255,.1);border:1px solid rgba(155,0,255,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#9B00FF"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/></svg></div><h3>Control de Acceso</h3><p>Huella, facial, RFID, barrera vehicular.</p><div class="svc-price">Desde $380</div><button class="svc-btn" onclick="goPage('contacto')">Cotizar</button></div>
+      <div class="svc-card sc-l" onclick="filterCat('cableado',null);goPage('home')"><div class="svc-ico" style="background:rgba(170,255,0,.1);border:1px solid rgba(170,255,0,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#AAFF00"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3zm8-13l-3 6h2l-3 6 8-9h-4l3-3z"/></svg></div><h3>Cableado Cat6</h3><p>TIA/EIA 568, certificación Fluke.</p><div class="svc-price">$35/punto</div><button class="svc-btn" onclick="goPage('contacto')">Cotizar</button></div>
+      <div class="svc-card sc-e" onclick="filterCat('fibra',null);goPage('home')"><div class="svc-ico" style="background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#00CFFF"><path d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z"/></svg></div><h3>Fibra Óptica</h3><p>Monomodo/multimodo, fusionadora, OTDR.</p><div class="svc-price">$4.50/metro</div><button class="svc-btn" onclick="goPage('contacto')">Cotizar</button></div>
+      <div class="svc-card sc-g" onclick="filterCat('redes',null);goPage('home')"><div class="svc-ico" style="background:rgba(0,255,65,.1);border:1px solid rgba(0,255,65,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#2ECC40"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg></div><h3>Redes Wi-Fi</h3><p>Ubiquiti Wi-Fi 6, VLAN, portal cautivo.</p><div class="svc-price">Desde $350</div><button class="svc-btn" onclick="goPage('contacto')">Cotizar</button></div>
+      <div class="svc-card sc-f" onclick="filterCat('gps',null);goPage('home')"><div class="svc-ico" style="background:rgba(255,69,0,.1);border:1px solid rgba(255,69,0,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#FF4500"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><h3>GPS Vehicular</h3><p>Flota tiempo real, corte combustible.</p><div class="svc-price">$85/mes</div><button class="svc-btn" onclick="goPage('contacto')">Cotizar</button></div>
+      <div class="svc-card sc-g" onclick="goPage('contacto')"><div class="svc-ico" style="background:rgba(0,255,65,.1);border:1px solid rgba(0,255,65,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#2ECC40"><path d="M7 2v11h3v9l7-12h-4l4-8H7z"/></svg></div><h3>UPS / Batería</h3><p>Respaldo energía para equipos críticos.</p><div class="svc-price">Desde $85</div><button class="svc-btn">Cotizar</button></div>
+      <div class="svc-card sc-p" onclick="goPage('contacto')"><div class="svc-ico" style="background:rgba(155,0,255,.1);border:1px solid rgba(155,0,255,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#9B00FF"><path d="M19 3H5c-1.1 0-2 .9-2 2v4c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 6H5V5h14v4zM3 15h2v-2H3v2zm4 0h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zM3 19h2v-2H3v2zm4 0h2v-2H7v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2zm4 0h2v-2h-2v2z"/></svg></div><h3>Motor para Portón</h3><p>Motor industrial, control remoto, sensor.</p><div class="svc-price">Desde $580</div><button class="svc-btn">Cotizar</button></div>
+      <div class="svc-card sc-e" onclick="goPage('contacto')"><div class="svc-ico" style="background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#00CFFF"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H3V5h18v14z"/></svg></div><h3>Publicidad Digital</h3><p>Pantallas LED interactivas, señalización.</p><div class="svc-price">Desde $350</div><button class="svc-btn">Cotizar</button></div>
+      <div class="svc-card sc-y" onclick="goPage('contacto')"><div class="svc-ico" style="background:rgba(255,230,0,.1);border:1px solid rgba(255,230,0,.2);"><svg viewBox="0 0 24 24" width="24" height="24" fill="#FFE600"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg></div><h3>Mantenimiento</h3><p>Revisión y soporte técnico preventivo.</p><div class="svc-price">Desde $50</div><button class="svc-btn">Cotizar</button></div>
+    </div>
+    <div style="text-align:center;margin-top:24px;">
+      <button onclick="goPage('contacto')" style="padding:12px 32px;background:linear-gradient(135deg,#FF4500,#FF0066);color:#fff;border:none;border-radius:7px;font-size:.88rem;font-weight:800;cursor:pointer;box-shadow:0 0 15px rgba(255,69,0,.3);">📨 Solicitar Cotización Gratuita</button>
+    </div>
+  </div>
+</div>
+ 
+<!-- ════ CLIENTES PAGE ════ -->
+<div class="page" id="pg-clientes">
+  <div class="page-banner"><div class="bc"><span onclick="goPage('home')">Inicio</span> › Clientes</div><h1>Gestión de <span style="color:var(--g)">Clientes</span></h1><p>Registro y administración con Firebase Firestore</p></div>
+  <div class="section container">
+    <div class="g2">
+      <div class="form-card">
+        <h3>👤 Registrar Nuevo Cliente</h3>
+        <div class="frow"><div class="fg"><label>Nombre / Empresa *</label><input id="cn" placeholder="Nombre o razón social"/></div><div class="fg"><label>Cédula / RUC *</label><input id="cc" placeholder="8-123-4567"/></div></div>
+        <div class="frow"><div class="fg"><label>Teléfono *</label><input id="ct" placeholder="+507 6000-0000" type="tel"/></div><div class="fg"><label>Correo</label><input id="ce" placeholder="correo@ejemplo.com" type="email"/></div></div>
+        <div class="frow">
+          <div class="fg"><label>Provincia</label><select id="cpv"><option value="">-- Selecciona --</option><option>Chiriquí</option><option>Panamá</option><option>Veraguas</option><option>Coclé</option><option>Herrera</option><option>Los Santos</option><option>Bocas del Toro</option><option>Colón</option><option>Darién</option></select></div>
+          <div class="fg"><label>Tipo</label><select id="cty"><option value="Residencial">Residencial</option><option value="Empresarial">Empresarial</option><option value="Institucional">Institucional</option><option value="Gobierno">Gobierno</option></select></div>
+        </div>
+        <div class="fg"><label>Dirección</label><textarea id="cdir" placeholder="Calle, barrio, ciudad..." style="min-height:65px;"></textarea></div>
+        <button class="f-submit" id="cbtn" onclick="regCliente()">👤 Registrar en Firebase</button>
+        <div class="f-alert" id="cal"></div>
+      </div>
+      <div class="tbl-card">
+        <div class="tbl-hdr"><h3>👥 Clientes Registrados</h3><button onclick="loadCl()" style="padding:4px 10px;background:rgba(0,255,65,.1);border:1px solid rgba(0,255,65,.2);color:var(--g);border-radius:4px;font-size:.72rem;cursor:pointer;">🔄</button></div>
+        <div class="tbl-scroll"><table>
+          <thead><tr><th>Nombre</th><th>Teléfono</th><th>Provincia</th><th>Tipo</th><th>Estado</th></tr></thead>
+          <tbody id="ctbl"><tr><td colspan="5" style="text-align:center;padding:24px;color:var(--muted);">⏳ Configura Firebase para ver clientes</td></tr></tbody>
+        </table></div>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- ════ CONTACTO PAGE ════ -->
+<div class="page" id="pg-contacto">
+  <div class="page-banner"><div class="bc"><span onclick="goPage('home')">Inicio</span> › Contacto</div><h1>Contáctenos</h1><p>Cotización gratuita — respondemos en menos de 2 horas</p></div>
+  <div class="section container">
+    <div class="g2-1">
+      <div>
+        <div class="loc-card" style="margin-bottom:14px;">
+          <h3>📞 Información de Contacto</h3>
+          <div class="loc-row"><div class="loc-ico" style="background:rgba(0,255,65,.1);border:1px solid rgba(0,255,65,.2);"><svg viewBox="0 0 24 24" fill="#2ECC40"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div><div class="loc-txt"><h4>Oficina Principal</h4><p>Av. Central, C.C. Los Andes, Local 14<br/>David, Chiriquí, Panamá</p></div></div>
+          <div class="loc-row"><div class="loc-ico" style="background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.2);"><svg viewBox="0 0 24 24" fill="#00CFFF"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div><div class="loc-txt"><h4>Teléfonos</h4><p>+507 775-0000 (Oficina)<br/>+507 6000-0000 (WhatsApp 24/7)</p></div></div>
+          <div class="loc-row"><div class="loc-ico" style="background:rgba(170,255,0,.1);border:1px solid rgba(170,255,0,.2);"><svg viewBox="0 0 24 24" fill="#AAFF00"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></div><div class="loc-txt"><h4>Email</h4><p>info@sucesosymas.com</p></div></div>
+          <div class="loc-row" style="margin-bottom:0"><div class="loc-ico" style="background:rgba(155,0,255,.1);border:1px solid rgba(155,0,255,.2);"><svg viewBox="0 0 24 24" fill="#9B00FF"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg></div><div class="loc-txt"><h4>Horario</h4><p>Lun–Vie: 8AM–6PM · Sáb: 9AM–2PM</p></div></div>
+        </div>
+        <div class="loc-card">
+          <h3 style="color:var(--g);">✅ ¿Por qué elegirnos?</h3>
+          <div style="display:flex;flex-direction:column;gap:7px;font-size:.85rem;color:var(--muted);">
+            <p>✔ Instalación profesional certificada</p>
+            <p>✔ Garantía 1 año en mano de obra</p>
+            <p>✔ Soporte técnico 24/7</p>
+            <p>✔ Certificación Fluke en cableado</p>
+            <p>✔ +500 clientes satisfechos</p>
+            <p>✔ Equipos originales con garantía de fábrica</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>💬 Enviar Mensaje</h3>
+        <div class="frow"><div class="fg"><label>Nombre *</label><input id="xn" placeholder="Tu nombre"/></div><div class="fg"><label>Teléfono *</label><input id="xt" placeholder="+507 6000-0000" type="tel"/></div></div>
+        <div class="fg"><label>Correo *</label><input id="xe" placeholder="correo@ejemplo.com" type="email"/></div>
+        <div class="fg"><label>Asunto *</label><select id="xa"><option value="">-- Selecciona servicio --</option><option>Cotización cámaras CCTV</option><option>Cotización sistema de alarma</option><option>Cotización cerco eléctrico</option><option>Cotización control de acceso</option><option>Cotización cableado Cat6</option><option>Cotización fibra óptica</option><option>Cotización UPS / Batería</option><option>Cotización motor para portón</option><option>Cotización redes Wi-Fi</option><option>Cotización GPS vehicular</option><option>Mantenimiento de equipos</option><option>Soporte técnico</option><option>Consulta general</option></select></div>
+        <div class="fg"><label>Mensaje *</label><textarea id="xm" placeholder="Cuéntanos qué necesitas. Tamaño del lugar, número de puntos, etc."></textarea></div>
+        <button class="f-submit" id="xbtn" onclick="enviarContacto()">📨 Enviar Mensaje</button>
+        <div class="f-alert" id="xal"></div>
+      </div>
+    </div>
+    <div style="margin-top:20px;" class="map-box">
+      <div class="map-grid"></div>
+      <div class="map-pin">📍</div>
+      <div class="map-lbl">DAVID, CHIRIQUÍ — PANAMÁ</div>
+      <div class="map-sub">Av. Central, C.C. Los Andes, Local 14</div>
+    </div>
+  </div>
+</div>
+ 
+<!-- ════ NOTICIAS PAGE ════ -->
+<div class="page" id="pg-noticias">
+  <div class="page-banner"><div class="bc"><span onclick="goPage('home')">Inicio</span> › Noticias</div><h1>Trabajos <span style="color:var(--e)">Realizados</span></h1><p>Proyectos recientes en empresas y residencias de Panamá</p></div>
+  <div class="section container">
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;">
+      <div class="ncard cg" style="cursor:default;"><div class="nthumb nt-lg tg"><svg viewBox="0 0 24 24" width="60" height="60" fill="#2ECC40" opacity=".5"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg></div><div class="nbody"><div class="ntag">🏆 Destacado — Marzo 2026</div><h3>48 Cámaras 4K — Centro Comercial Chiriquí</h3><p>Sistema NVR completo, cobertura total del estacionamiento. Reducción 95% en incidentes de seguridad. David, Chiriquí.</p><div class="ndate">📅 Marzo 2026</div></div></div>
+      <div class="ncard cp" style="cursor:default;"><div class="nthumb nt-lg tp"><svg viewBox="0 0 24 24" width="60" height="60" fill="#9B00FF" opacity=".5"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2z"/></svg></div><div class="nbody"><div class="ntag">✅ Control Acceso — Feb 2026</div><h3>Biométricos + Torniquetes — Planta Industrial 200 empleados</h3><p>Sistema de huella + facial + software de asistencia. Exportación a Excel. David, Chiriquí.</p><div class="ndate">📅 Febrero 2026</div></div></div>
+      <div class="ncard" style="border-color:rgba(170,255,0,.1);cursor:default;"><div class="nthumb nt-lg tl"><svg viewBox="0 0 24 24" width="60" height="60" fill="#AAFF00" opacity=".5"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg></div><div class="nbody"><div class="ntag" style="color:#AAFF00;">🔧 Cableado Cat6 — Feb 2026</div><h3>Red Estructurada — Edificio Corporativo 6 Pisos, 120 puntos Cat6A</h3><p>Cableado certificado Fluke, rack APC, patch panel 48 puertos. Documentación completa entregada.</p><div class="ndate">📅 Febrero 2026</div></div></div>
+      <div class="ncard ce" style="cursor:default;"><div class="nthumb nt-lg te"><svg viewBox="0 0 24 24" width="60" height="60" fill="#00CFFF" opacity=".5"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9z"/></svg></div><div class="nbody"><div class="ntag">🌐 Redes Wi-Fi — Ene 2026</div><h3>Wi-Fi 6 Ubiquiti — Empresa de 80 usuarios en David, Chiriquí</h3><p>8 access points UniFi U6 Pro gestionados en la nube. Cobertura total en 3 pisos.</p><div class="ndate">📅 Enero 2026</div></div></div>
+      <div class="ncard cf" style="cursor:default;"><div class="nthumb nt-lg tf"><svg viewBox="0 0 24 24" width="60" height="60" fill="#FF4500" opacity=".5"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg></div><div class="nbody"><div class="ntag">📢 Alarmas — Dic 2025</div><h3>Nueva Central de Monitoreo 24/7 — Panamá Ciudad</h3><p>Capacidad para 500 clientes simultáneos. Respuesta en menos de 90 segundos a cualquier emergencia.</p><div class="ndate">📅 Diciembre 2025</div></div></div>
+      <div class="ncard" style="border-color:rgba(255,230,0,.1);cursor:default;"><div class="nthumb nt-lg" style="background:linear-gradient(135deg,rgba(255,230,0,.1),rgba(255,140,0,.06));"><svg viewBox="0 0 24 24" width="60" height="60" fill="#FFE600" opacity=".5"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></div><div class="nbody"><div class="ntag" style="color:#FFE600;">⚡ Cerco — Nov 2025</div><h3>Cerco Eléctrico 400 metros — Residencial David</h3><p>Energizador Nemtek 5J, integración con alarma Paradox. Zona perimetral con señalización UV.</p><div class="ndate">📅 Noviembre 2025</div></div></div>
+    </div>
+  </div>
+</div>
+ 
+<!-- ════ FACTURA PAGE ════ -->
+<div class="page" id="pg-factura">
+  <div class="page-banner"><div class="bc"><span onclick="goPage('home')">Inicio</span> › Factura</div><h1>Factura de <span style="color:var(--f)">Servicios</span></h1><p>Factura profesional con cotización de hosting, dominio y correo corporativo</p></div>
+  <div class="section container" style="max-width:900px;">
+    <div style="display:flex;justify-content:flex-end;margin-bottom:12px;"><button class="print-btn" onclick="toast('🖨️ Impresión disponible en el archivo HTML descargado')">🖨️ Imprimir / PDF</button></div>
+    <div class="inv-card">
+      <div class="inv-hdr">
+        <div class="inv-co">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:7px;">
+            <div class="logo-shield" style="width:38px;height:38px;"><svg viewBox="0 0 100 100" width="26" height="26"><polygon points="50,5 95,25 95,72 50,98 5,72 5,25" fill="#050810" stroke="#2ECC40" stroke-width="3"/><ellipse cx="55" cy="42" rx="28" ry="26" fill="#2ECC40"/><ellipse cx="55" cy="44" rx="22" ry="21" fill="#050810"/><ellipse cx="58" cy="40" rx="18" ry="18" fill="#2ECC40"/><path d="M42,72 Q48,55 53,50 Q51,63 47,76 Z" fill="#2ECC40"/><path d="M53,73 Q58,60 62,55 Q62,68 59,80 Z" fill="#2ECC40"/></svg></div>
+            <h2>SUCESOS y MÁS</h2>
+          </div>
+          <p>Seguridad Electrónica & Telecomunicaciones<br/>Av. Central, C.C. Los Andes, Local 14 — David, Chiriquí, Panamá<br/>📞 +507 775-0000 | info@sucesosymas.com | RUC: 123-456-789 DV-00</p>
+        </div>
+        <div class="inv-n">
+          <div class="num">FACTURA N° 2026-001</div>
+          <p>Fecha: 26 de marzo de 2026</p>
+          <p>Vence: 25 de abril de 2026</p>
+          <div class="inv-status">⚡ EMITIDA</div>
+        </div>
+      </div>
+      <div class="inv-parties">
+        <div class="inv-p"><h4>💼 Proveedor</h4><p><strong>SUCESOS y MÁS</strong><br/>RUC: 123-456-789 DV-00<br/>David, Chiriquí, Panamá<br/>+507 775-0000</p></div>
+        <div class="inv-p"><h4>🏢 Cliente / Proyecto</h4><p><strong>PYME SUCESOS y MÁS</strong><br/>Desarrollo Sitio Web Corporativo<br/>David, Chiriquí, Panamá<br/>Contrato de servicios profesionales 2026</p></div>
+      </div>
+      <div class="inv-tbl">
+        <table>
+          <thead><tr><th style="width:52%">Descripción</th><th style="text-align:center">Cant.</th><th style="text-align:right">Precio</th><th style="text-align:right">Total</th></tr></thead>
+          <tbody>
+            <tr><td><strong>🌐 Desarrollo Sitio Web Corporativo HTML5/CSS3/JS</strong><br/><small style="color:var(--muted);">5 páginas, Firebase Auth, login/registro, menú interactivo, 13 categorías con iconos SVG, productos por categoría, slider 4 slides, formularios Firebase</small></td><td style="text-align:center">1</td><td style="text-align:right">$850.00</td><td style="text-align:right;color:var(--g);font-weight:700">$850.00</td></tr>
+            <tr><td><strong>🗄️ Firebase Firestore + Firebase Auth</strong><br/><small style="color:var(--muted);">BD: clientes, contactos, productos, servicios. Login/Registro + Google Auth. Plan Spark gratuito.</small></td><td style="text-align:center">1</td><td style="text-align:right">$350.00</td><td style="text-align:right;color:var(--g);font-weight:700">$350.00</td></tr>
+            <tr><td><strong>☁️ GitHub Pages — Hosting Gratuito</strong><br/><small style="color:var(--muted);">Repositorio, activación, pruebas de links, dominio personalizado</small></td><td style="text-align:center">1</td><td style="text-align:right">$120.00</td><td style="text-align:right;color:var(--g);font-weight:700">$120.00</td></tr>
+            <tr><td colspan="4" style="background:rgba(0,255,65,.04);font-size:.65rem;color:var(--g);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:7px 10px;">📦 Cotización Servicios Adicionales</td></tr>
+            <tr><td><strong>🌍 Hostinger Premium — Hosting</strong><br/><small style="color:var(--muted);">100 GB SSD, SSL gratis, 100 correos, CDN global — 1 año</small></td><td style="text-align:center">1 año</td><td style="text-align:right">$35.88</td><td style="text-align:right;color:var(--o);font-weight:700">$35.88</td></tr>
+            <tr><td><strong>🔗 Dominio sucesosymas.com — Namecheap</strong><br/><small style="color:var(--muted);">Registro con privacidad WHOIS incluida. Renovación anual.</small></td><td style="text-align:center">1 año</td><td style="text-align:right">$12.98</td><td style="text-align:right;color:var(--o);font-weight:700">$12.98</td></tr>
+            <tr><td><strong>📧 Google Workspace Starter</strong><br/><small style="color:var(--muted);">@sucesosymas.com, 30GB, Drive, Meet, Docs — Próxima implementación</small></td><td style="text-align:center">1 usuario</td><td style="text-align:right">$72.00/año</td><td style="text-align:right;color:var(--o);font-weight:700">$72.00</td></tr>
+          </tbody>
+          <tfoot>
+            <tr><td colspan="3" style="text-align:right;color:var(--muted);padding:7px 10px;">Subtotal Desarrollo:</td><td style="text-align:right;padding:7px 10px;">$1,320.00</td></tr>
+            <tr><td colspan="3" style="text-align:right;color:var(--muted);padding:7px 10px;">Servicios Adicionales:</td><td style="text-align:right;padding:7px 10px;">$120.86</td></tr>
+            <tr><td colspan="3" style="text-align:right;color:var(--muted);padding:7px 10px;">ITBMS (7%):</td><td style="text-align:right;padding:7px 10px;">$92.40</td></tr>
+            <tr class="inv-tot"><td colspan="3" style="text-align:right;padding:11px 10px;">💰 TOTAL FACTURA:</td><td style="text-align:right;padding:11px 10px;">$1,533.26</td></tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="inv-notes"><h4>📌 Notas y Condiciones</h4><p>• Pago: 50% al inicio del proyecto — 50% contra entrega final &nbsp;•&nbsp; Entrega: 7 días hábiles &nbsp;•&nbsp; Garantía: 3 meses soporte post-entrega &nbsp;•&nbsp; Firebase Spark Plan gratuito — 50,000 lecturas/día &nbsp;•&nbsp; Válida 30 días</p></div>
+      <div class="inv-foot"><p>🛡️ SUCESOS y MÁS — Seguridad Electrónica & Telecomunicaciones — David, Chiriquí, Panamá</p><div style="text-align:right;border-top:1px solid rgba(255,255,255,.06);padding-top:6px;"><p style="font-size:.7rem;color:var(--muted);">Firma Autorizada</p><p style="font-family:'Orbitron',sans-serif;font-weight:700;font-size:.82rem;color:var(--g);">Gerencia General</p></div></div>
+    </div>
+  </div>
+</div>
+ 
+<!-- ════ COTIZADOR PAGE ════ -->
+<div class="page" id="pg-cotizador">
+  <div class="page-banner"><div class="bc"><span onclick="goPage('home')">Inicio</span> › Mi Cotización</div><h1>Mi <span style="color:var(--g)">Cotización</span></h1><p>Productos seleccionados para cotizar</p></div>
+  <div class="section container" style="max-width:800px;">
+    <div class="tbl-card">
+      <div class="tbl-hdr"><h3>🛒 Productos en Cotización</h3></div>
+      <div id="cotizList" style="min-height:100px;"></div>
+      <div id="cotizTotal" class="cotiz-total" style="display:none;"></div>
+    </div>
+    <div style="margin-top:16px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <button onclick="goPage('home')" style="padding:11px 24px;background:transparent;border:1.5px solid var(--g2);color:var(--g);border-radius:7px;font-size:.85rem;font-weight:700;cursor:pointer;">← Seguir comprando</button>
+      <button onclick="goPage('contacto');toast('📋 Cotización enviada al formulario de contacto!')" style="padding:11px 24px;background:linear-gradient(135deg,#FF4500,#FF0066);color:#fff;border:none;border-radius:7px;font-size:.85rem;font-weight:800;cursor:pointer;box-shadow:0 0 15px rgba(255,69,0,.3);">📨 Enviar Cotización al Vendedor</button>
+    </div>
+  </div>
+</div>
+ 
+<!-- ════ PERFIL PAGE ════ -->
+<div class="page" id="pg-perfil">
+  <div class="page-banner"><div class="bc"><span onclick="goPage('home')">Inicio</span> › Mi Perfil</div><h1>Mi <span style="color:var(--g)">Perfil</span></h1></div>
+  <div class="section container" style="max-width:660px;">
+    <div class="perfil-hero">
+      <div class="p-av" id="pavatar">?</div>
+      <div class="p-info">
+        <h2 id="pname">—</h2>
+        <p id="pemail" style="color:var(--muted);">—</p>
+        <div class="p-badge">✅ Cliente Activo — sucesosymas.com</div>
+      </div>
+    </div>
+    <div class="form-card">
+      <h3>📋 Datos de Mi Cuenta</h3>
+      <div class="frow"><div class="fg"><label>Nombre Completo</label><input id="pnm" readonly style="opacity:.65;cursor:not-allowed;"/></div><div class="fg"><label>Correo Electrónico</label><input id="pem" readonly style="opacity:.65;cursor:not-allowed;"/></div></div>
+      <div class="frow"><div class="fg"><label>Teléfono</label><input id="ptel" placeholder="No registrado" readonly style="opacity:.65;cursor:not-allowed;"/></div><div class="fg"><label>Provincia</label><input id="pprov" placeholder="No registrado" readonly style="opacity:.65;cursor:not-allowed;"/></div></div>
+      <div style="margin-top:8px;display:flex;gap:10px;">
+        <button onclick="goPage('cotizador')" style="flex:1;padding:11px;background:rgba(0,255,65,.1);border:1.5px solid rgba(0,255,65,.25);color:var(--g);border-radius:7px;font-size:.85rem;font-weight:700;cursor:pointer;">📋 Ver Cotizaciones</button>
+        <button onclick="doLogout()" style="flex:1;padding:11px;background:rgba(255,0,102,.1);border:1.5px solid rgba(255,0,102,.25);color:var(--pk);border-radius:7px;font-size:.85rem;font-weight:700;cursor:pointer;">🚪 Cerrar Sesión</button>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- ══════════ AUTH MODAL ══════════ -->
+<div class="modal-ov" id="authModal">
+  <div class="modal">
+    <button class="m-close" onclick="closeAuth()">✕</button>
+    <div class="m-tabs">
+      <button class="m-tab on" id="tabL" onclick="swTab('login')">🔑 Iniciar Sesión</button>
+      <button class="m-tab" id="tabR" onclick="swTab('register')">📝 Registrarse</button>
+    </div>
+    <div class="m-body">
+      <div class="m-logo">
+        <h2><span>sucesos</span>ymas.com</h2>
+        <p id="mSub">Accede a tu cuenta de seguridad</p>
+      </div>
+      <!-- LOGIN -->
+      <div class="m-form on" id="mfLogin">
+        <div class="mfg"><label>Correo Electrónico</label><input id="lE" type="email" placeholder="correo@ejemplo.com"/></div>
+        <div class="mfg"><label>Contraseña</label><input id="lP" type="password" placeholder="Tu contraseña"/><span class="forgot">¿Olvidaste tu contraseña?</span></div>
+        <button class="m-submit" id="lBtn" onclick="doLogin()">🔑 Iniciar Sesión</button>
+        <div class="m-alert" id="lAl"></div>
+        <div class="m-divider"><span>o continúa con</span></div>
+        <button class="m-google" onclick="doGoogle()">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Continuar con Google
+        </button>
+        <p class="m-small">¿No tienes cuenta? <span class="m-link" onclick="swTab('register')">Regístrate gratis</span></p>
+      </div>
+      <!-- REGISTER -->
+      <div class="m-form" id="mfReg">
+        <div class="m-row">
+          <div class="mfg"><label>Nombre *</label><input id="rN" type="text" placeholder="Tu nombre"/></div>
+          <div class="mfg"><label>Apellido *</label><input id="rL" type="text" placeholder="Apellido"/></div>
+        </div>
+        <div class="mfg"><label>Correo *</label><input id="rE" type="email" placeholder="correo@ejemplo.com"/></div>
+        <div class="mfg"><label>Teléfono *</label><input id="rT" type="tel" placeholder="+507 6000-0000"/></div>
+        <div class="m-row">
+          <div class="mfg"><label>Contraseña *</label><input id="rP" type="password" placeholder="Mínimo 6 caracteres"/></div>
+          <div class="mfg"><label>Confirmar *</label><input id="rP2" type="password" placeholder="Repite la contraseña"/></div>
+        </div>
+        <div class="mfg"><label>Provincia</label><select id="rPv"><option value="">-- Selecciona --</option><option>Chiriquí</option><option>Panamá</option><option>Veraguas</option><option>Coclé</option><option>Herrera</option><option>Los Santos</option><option>Bocas del Toro</option><option>Colón</option><option>Darién</option></select></div>
+        <button class="m-submit" id="rBtn" onclick="doRegister()">📝 Crear Mi Cuenta Gratis</button>
+        <div class="m-alert" id="rAl"></div>
+        <p class="m-small">¿Ya tienes cuenta? <span class="m-link" onclick="swTab('login')">Iniciar sesión</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<!-- ══════════════════════════════════════════
+     FIREBASE + FULL JS
+══════════════════════════════════════════ -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, updateProfile } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+import { getFirestore, collection, addDoc, getDocs, query, orderBy, serverTimestamp, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+ 
+// ⚠️ REEMPLAZA CON TUS CREDENCIALES DE FIREBASE
+// Ve a https://console.firebase.google.com → Tu proyecto → Configuración → SDK
+const firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_PROYECTO.firebaseapp.com",
+  projectId: "TU_PROYECTO_ID",
+  storageBucket: "TU_PROYECTO.appspot.com",
+  messagingSenderId: "TU_SENDER_ID",
+  appId: "TU_APP_ID"
+};
+ 
+const app  = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db   = getFirestore(app);
+const gp   = new GoogleAuthProvider();
+ 
+onAuthStateChanged(auth, user => {
+  const in_ = !!user;
+  ['tbReg','tbOr','tbLog','mbReg','mbLog'].forEach(id => {
+    const el = document.getElementById(id); if(el) el.style.display = in_ ? 'none' : '';
+  });
+  const uw = document.getElementById('userWrap');
+  if(uw) uw.style.display = in_ ? 'flex' : 'none';
+  if(in_) {
+    const n = user.displayName || user.email.split('@')[0];
+    document.getElementById('uName').textContent  = n;
+    document.getElementById('uAv').textContent    = n[0].toUpperCase();
+    document.getElementById('udName').textContent = n;
+    document.getElementById('udEmail').textContent = user.email;
+    document.getElementById('pname').textContent   = n;
+    document.getElementById('pemail').textContent  = user.email;
+    document.getElementById('pavatar').textContent = n[0].toUpperCase();
+    document.getElementById('pnm').value           = n;
+    document.getElementById('pem').value           = user.email;
+  }
+});
+ 
+window.doRegister = async () => {
+  const name=document.getElementById('rN').value.trim(), last=document.getElementById('rL').value.trim();
+  const email=document.getElementById('rE').value.trim(), tel=document.getElementById('rT').value.trim();
+  const pass=document.getElementById('rP').value, pass2=document.getElementById('rP2').value;
+  const prov=document.getElementById('rPv').value, btn=document.getElementById('rBtn'), al=document.getElementById('rAl');
+  if(!name||!email||!pass) return showAl(al,'err','⚠️ Completa los campos obligatorios (*)');
+  if(pass.length<6) return showAl(al,'err','⚠️ La contraseña debe tener al menos 6 caracteres');
+  if(pass!==pass2) return showAl(al,'err','⚠️ Las contraseñas no coinciden');
+  btn.disabled=true; btn.textContent='⏳ Creando cuenta...';
+  try {
+    const cred = await createUserWithEmailAndPassword(auth, email, pass);
+    await updateProfile(cred.user, {displayName:`${name} ${last}`});
+    await setDoc(doc(db,'usuarios',cred.user.uid),{nombre:`${name} ${last}`,email,telefono:tel,provincia:prov,tipo:'Residencial',estado:'activo',fecha:serverTimestamp()});
+    showAl(al,'ok','✅ ¡Cuenta creada exitosamente! Bienvenido/a a SUCESOS y MÁS.');
+    setTimeout(closeAuth, 1800);
+  } catch(e) {
+    const m={'auth/email-already-in-use':'⚠️ Este correo ya está registrado.','auth/invalid-email':'⚠️ Correo inválido.','auth/weak-password':'⚠️ Contraseña débil. Mínimo 6 caracteres.','auth/configuration-not-found':'❌ Configura Firebase Auth (habilita Email/Password).'};
+    showAl(al,'err', m[e.code]||`❌ ${e.message}`);
+  }
+  btn.disabled=false; btn.textContent='📝 Crear Mi Cuenta Gratis';
+};
+ 
+window.doLogin = async () => {
+  const email=document.getElementById('lE').value.trim(), pass=document.getElementById('lP').value;
+  const btn=document.getElementById('lBtn'), al=document.getElementById('lAl');
+  if(!email||!pass) return showAl(al,'err','⚠️ Ingresa tu correo y contraseña');
+  btn.disabled=true; btn.textContent='⏳ Ingresando...';
+  try {
+    await signInWithEmailAndPassword(auth, email, pass);
+    showAl(al,'ok','✅ ¡Sesión iniciada correctamente!');
+    setTimeout(closeAuth, 1200);
+  } catch(e) {
+    const m={'auth/user-not-found':'⚠️ No existe cuenta con este correo.','auth/wrong-password':'⚠️ Contraseña incorrecta.','auth/invalid-credential':'⚠️ Credenciales inválidas.','auth/too-many-requests':'⚠️ Demasiados intentos. Espera unos minutos.','auth/configuration-not-found':'❌ Configura Firebase Auth primero.'};
+    showAl(al,'err', m[e.code]||`❌ ${e.message}`);
+  }
+  btn.disabled=false; btn.textContent='🔑 Iniciar Sesión';
+};
+ 
+window.doGoogle = async () => {
+  try { await signInWithPopup(auth, gp); closeAuth(); }
+  catch(e) { console.error('Google login:', e.code); }
+};
+ 
+window.doLogout = async () => {
+  await signOut(auth);
+  closeUD();
+  goPage('home');
+  toast('👋 Sesión cerrada. ¡Hasta pronto!');
+};
+ 
+window.regCliente = async () => {
+  const n=document.getElementById('cn').value.trim(), c=document.getElementById('cc').value.trim();
+  const t=document.getElementById('ct').value.trim(), e=document.getElementById('ce').value.trim();
+  const p=document.getElementById('cpv').value, ty=document.getElementById('cty').value;
+  const d=document.getElementById('cdir').value.trim();
+  const btn=document.getElementById('cbtn'), al=document.getElementById('cal');
+  if(!n||!c||!t) return showAl(al,'err','⚠️ Completa los campos obligatorios (*)');
+  btn.disabled=true; btn.textContent='⏳ Guardando...';
+  try {
+    await addDoc(collection(db,'clientes'),{nombre:n,cedula:c,telefono:t,email:e,provincia:p,tipo:ty,direccion:d,estado:'activo',fecha:serverTimestamp()});
+    showAl(al,'ok','✅ Cliente registrado correctamente en Firebase.');
+    ['cn','cc','ct','ce','cdir'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('cpv').value='';
+    loadCl();
+  } catch(e){ showAl(al,'err','❌ Error. Verifica tu configuración de Firebase.'); }
+  btn.disabled=false; btn.textContent='👤 Registrar en Firebase';
+};
+ 
+window.loadCl = async () => {
+  const tb=document.getElementById('ctbl');
+  try {
+    const s=await getDocs(query(collection(db,'clientes'),orderBy('fecha','desc')));
+    if(s.empty){tb.innerHTML='<tr><td colspan="5" style="text-align:center;padding:20px;color:var(--muted);">Sin clientes registrados aún.</td></tr>';return;}
+    tb.innerHTML=s.docs.map(d=>{const x=d.data();return`<tr><td><strong>${x.nombre}</strong></td><td>${x.telefono}</td><td>${x.provincia||'—'}</td><td><span class="bdg bdg-mid">${x.tipo}</span></td><td><span class="bdg bdg-ok">Activo</span></td></tr>`;}).join('');
+  } catch(e){tb.innerHTML='<tr><td colspan="5" style="text-align:center;padding:20px;color:var(--muted);">❌ Configura Firebase primero.</td></tr>';}
+};
+loadCl();
+ 
+window.enviarContacto = async () => {
+  const n=document.getElementById('xn').value.trim(), t=document.getElementById('xt').value.trim();
+  const e=document.getElementById('xe').value.trim(), a=document.getElementById('xa').value;
+  const m=document.getElementById('xm').value.trim();
+  const btn=document.getElementById('xbtn'), al=document.getElementById('xal');
+  if(!n||!t||!e||!a||!m) return showAl(al,'err','⚠️ Completa todos los campos obligatorios (*)');
+  btn.disabled=true; btn.textContent='⏳ Enviando...';
+  try {
+    await addDoc(collection(db,'contactos'),{nombre:n,telefono:t,email:e,asunto:a,mensaje:m,estado:'pendiente',fecha:serverTimestamp()});
+    showAl(al,'ok','✅ ¡Mensaje enviado! Te contactaremos en menos de 2 horas.');
+    ['xn','xt','xe','xm'].forEach(id=>document.getElementById(id).value='');
+    document.getElementById('xa').value='';
+  } catch(e){showAl(al,'err','❌ Error al enviar. Verifica tu configuración de Firebase.');}
+  btn.disabled=false; btn.textContent='📨 Enviar Mensaje';
+};
+ 
+function showAl(el, type, msg) {
+  el.className=`f-alert ${type==='ok'?'ok':'err'}`;
+  // also handle m-alert class
+  if(el.id.startsWith('l')||el.id.startsWith('r')) el.className=`m-alert ${type==='ok'?'ok':'err'}`;
+  el.textContent=msg; el.style.display='block';
+  setTimeout(()=>el.style.display='none', 6000);
+}
+</script>
+ 
+<script>
+// ══ PRODUCT DATA — 13 categories with Panama prices ══
+const PRODS = [
+  // CÁMARAS
+  {id:1,cat:'camaras',ico:'📹',brand:'Hikvision',name:'Cámara Domo 4MP IP67',desc:'4MP, visión nocturna 30m, resistente al agua, audio.',price:89,old:110,badge:'b-hot',bTxt:'🔥 HOT'},
+  {id:2,cat:'camaras',ico:'🎥',brand:'Dahua',name:'Cámara Bullet 8MP 4K',desc:'Ultra HD 4K, IR 60m, lente varifocal, IP67/IK10.',price:145,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:3,cat:'camaras',ico:'📡',brand:'Dahua',name:'Cámara PTZ 2MP 360°',desc:'Pan/Tilt/Zoom 360°, seguimiento automático IA.',price:285,badge:'b-top',bTxt:'⭐ TOP'},
+  {id:4,cat:'camaras',ico:'📷',brand:'Hikvision',name:'Cámara Fisheye 5MP',desc:'Vista panorámica 360°, sin puntos ciegos.',price:175,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:5,cat:'camaras',ico:'🔭',brand:'Dahua',name:'Cámara IA 4K WizMind',desc:'Reconocimiento facial, detección de vehículos.',price:220,badge:'b-hot',bTxt:'🔥 HOT'},
+  {id:6,cat:'camaras',ico:'📹',brand:'Hikvision',name:'Cámara AcuSense 4MP',desc:'Detección persona/vehículo, falsas alarmas 0.',price:95,badge:null},
+  {id:7,cat:'camaras',ico:'🔦',brand:'Reolink',name:'Cámara ColorVu 4MP',desc:'Color de noche, luz blanca LED integrada.',price:65,badge:'b-sale',bTxt:'💥 OFERTA'},
+  {id:8,cat:'camaras',ico:'📹',brand:'Hikvision',name:'Cámara Domo Vandal 8MP',desc:'Anti-vandal IK10, 4K, IR 40m.',price:135,badge:null},
+  // NVR / CIRCUITO CERRADO
+  {id:9,cat:'nvr',ico:'🖥️',brand:'Hikvision',name:'NVR 16 Canales 4K',desc:'16 canales, HDMI, soporte 2 HDD hasta 8TB.',price:320,badge:null},
+  {id:10,cat:'nvr',ico:'💿',brand:'Dahua',name:'NVR 32 Canales 4K AI',desc:'32 cámaras, IA integrada, RAID, 4 HDD.',price:580,badge:'b-top',bTxt:'⭐ TOP'},
+  {id:11,cat:'nvr',ico:'📼',brand:'Hikvision',name:'DVR 8 Canales HD-TVI',desc:'Analógico + IP, 1080p, 1 HDD, 2USB.',price:180,badge:null},
+  {id:12,cat:'nvr',ico:'🗄️',brand:'Dahua',name:'NVR 8 Canales PoE',desc:'8 puertos PoE integrados, 4K, 2 HDD.',price:245,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:13,cat:'nvr',ico:'💾',brand:'WD Purple',name:'HDD 4TB WD Purple',desc:'Disco duro vigilancia, 4TB, 5400RPM.',price:85,badge:'b-hot',bTxt:'🔥 HOT'},
+  // ALARMAS
+  {id:14,cat:'alarmas',ico:'🚨',brand:'Paradox',name:'Panel Alarma EVO192',desc:'192 zonas, IP, app Insite Gold.',price:210,badge:'b-top',bTxt:'⭐ TOP'},
+  {id:15,cat:'alarmas',ico:'🔔',brand:'DSC',name:'Panel PowerSeries Neo 16z',desc:'16 zonas ampliable, IP/GSM, Alexa compatible.',price:165,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:16,cat:'alarmas',ico:'📡',brand:'Hikvision',name:'Sensor PIR AX PRO',desc:'PIR inalámbrico, rango 10m, pet immune.',price:45,badge:null},
+  {id:17,cat:'alarmas',ico:'🔊',brand:'Paradox',name:'Sirena Exterior 30W',desc:'30W, flash LED, resistente IP65.',price:38,badge:null},
+  {id:18,cat:'alarmas',ico:'🚪',brand:'DSC',name:'Sensor Magnético de Puerta',desc:'Contacto magnético NC/NO, batería 5 años.',price:18,badge:'b-sale',bTxt:'💥 OFERTA'},
+  {id:19,cat:'alarmas',ico:'📟',brand:'Paradox',name:'Teclado Táctil LCD 32z',desc:'Teclado táctil, retroiluminado, 32 zonas.',price:75,badge:null},
+  // CONTROL ACCESO
+  {id:20,cat:'acceso',ico:'🔐',brand:'ZKTeco',name:'Biométrico Facial ZK-F22',desc:'Facial + huella, pantalla 5", 1,000 usuarios.',price:175,old:220,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:21,cat:'acceso',ico:'🖐',brand:'ZKTeco',name:'Lector Huella SF300',desc:'Huella digital, 3,000 users, exporta Excel.',price:95,badge:null},
+  {id:22,cat:'acceso',ico:'👁',brand:'ZKTeco',name:'Facial SpeedFace V5L',desc:'Reconocimiento facial ultra rápido, &lt;0.5s.',price:350,badge:'b-hot',bTxt:'🔥 HOT'},
+  {id:23,cat:'acceso',ico:'💳',brand:'HID',name:'Lector RFID RP40',desc:'Tarjeta 125kHz/13.56MHz, distancia 10cm.',price:65,badge:null},
+  {id:24,cat:'acceso',ico:'🔑',brand:'HES',name:'Cerradura Magnética 600lbs',desc:'Fuerza 600 lbs, failsafe, 12/24VDC.',price:85,badge:null},
+  {id:25,cat:'acceso',ico:'🚧',brand:'Turnstyle',name:'Torniquete Trípode Acero',desc:'Acero inoxidable, control bilateral, 24V.',price:420,badge:null},
+  // CABLEADO
+  {id:26,cat:'cableado',ico:'🔌',brand:'AMP',name:'Cable Cat6 UTP 305m',desc:'Rollo 305m certificado, 4 pares, color gris.',price:110,badge:null},
+  {id:27,cat:'cableado',ico:'🔩',brand:'Panduit',name:'Patch Panel 24P Cat6',desc:'1U, 24 puertos RJ-45, Cat6 certificado.',price:85,badge:null},
+  {id:28,cat:'cableado',ico:'🗄',brand:'APC',name:'Rack 24U con Puertas',desc:'Rack cerrado 24U, puertas ventiladas, ruedas.',price:380,badge:'b-hot',bTxt:'🔥 HOT'},
+  {id:29,cat:'cableado',ico:'🧰',brand:'Panduit',name:'Canaleta PVC 60x40 2m',desc:'Canaleta PVC blanca, 60x40mm, con tapa.',price:4.5,badge:null},
+  {id:30,cat:'cableado',ico:'🔌',brand:'Legrand',name:'Roseta RJ-45 Cat6 Keystone',desc:'Jack Cat6 keystone, blindado, tool-less.',price:3.5,badge:'b-sale',bTxt:'💥 OFERTA'},
+  {id:31,cat:'cableado',ico:'⚡',brand:'APC',name:'UPS SmartUPS 1500VA',desc:'1500VA, LCD, USB, 8 salidas.',price:295,badge:null},
+  // FIBRA
+  {id:32,cat:'fibra',ico:'💡',brand:'Corning',name:'Fibra Óptica OM3 /metro',desc:'Multimodo OM3, 12 fibras, LSZH.',price:3.8,badge:null},
+  {id:33,cat:'fibra',ico:'🔆',brand:'Corning',name:'Fibra Monomodo OS2 /metro',desc:'Monomodo OS2, 4 fibras, LSZH, exterior.',price:4.5,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:34,cat:'fibra',ico:'🔭',brand:'Fujikura',name:'Fusionadora de Fibra FSM-80S',desc:'Fusionadora automática, 9 seg, pantalla 5".',price:1850,badge:'b-top',bTxt:'⭐ TOP'},
+  {id:35,cat:'fibra',ico:'📦',brand:'Panduit',name:'Bandeja de Empalme 12 fibras',desc:'Bandeja de empalme para rack, 12 fusiones.',price:28,badge:null},
+  {id:36,cat:'fibra',ico:'🔌',brand:'Neutrik',name:'Conectores SC-APC x10',desc:'Conectores SC/APC pre-pulidos, pack 10 uds.',price:22,badge:'b-sale',bTxt:'💥 OFERTA'},
+  // CERCO
+  {id:37,cat:'cerco',ico:'⚡',brand:'Nemtek',name:'Energizador 5 Joules',desc:'5,000V, 5J, corte de línea, LED indicador.',price:280,badge:'b-hot',bTxt:'🔥 HOT'},
+  {id:38,cat:'cerco',ico:'🔋',brand:'Yonusa',name:'Energizador Yonusa 10,000V',desc:'10,000V, 3J, app móvil, corte de zona.',price:195,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:39,cat:'cerco',ico:'📡',brand:'Nemtek',name:'Cable Cerco Galvanizado 100m',desc:'Cable de acero galvanizado 2.5mm.',price:35,badge:null},
+  {id:40,cat:'cerco',ico:'🔩',brand:'Genérico',name:'Aisladores de Porcelana x50',desc:'Aisladores para postes de cerco, pack 50 uds.',price:12,badge:'b-sale',bTxt:'💥 OFERTA'},
+  // REDES
+  {id:41,cat:'redes',ico:'📡',brand:'Ubiquiti',name:'AP UniFi U6 Pro',desc:'Wi-Fi 6 Triband, 300 clientes, PoE+.',price:195,badge:'b-hot',bTxt:'🔥 HOT'},
+  {id:42,cat:'redes',ico:'🌐',brand:'Ubiquiti',name:'Switch UniFi USW-Pro-24',desc:'24 puertos PoE+, gestionable, 1U rack.',price:485,badge:'b-top',bTxt:'⭐ TOP'},
+  {id:43,cat:'redes',ico:'🖥',brand:'Ubiquiti',name:'Router UniFi UXG-Pro',desc:'Firewall, VPN, DPI, 10G SFP+.',price:299,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:44,cat:'redes',ico:'📶',brand:'Ruijie',name:'AP Indoor Wi-Fi 6 RG-AP820',desc:'AX3000, 500 usuarios, gestión en nube.',price:125,badge:null},
+  {id:45,cat:'redes',ico:'📡',brand:'Ubiquiti',name:'AP UniFi U6 Lite',desc:'Wi-Fi 6 Dual-band, 300 clientes, económico.',price:99,badge:null},
+  // GPS
+  {id:46,cat:'gps',ico:'🛰️',brand:'Teltonika',name:'Rastreador GPS FMB140',desc:'4G LTE, GNSS, batería respaldo, I/O.',price:95,badge:null},
+  {id:47,cat:'gps',ico:'📍',brand:'Coban',name:'GPS Tracker TK303G',desc:'3G, SOS, cerca virtual, historial 60 días.',price:55,badge:'b-sale',bTxt:'💥 OFERTA'},
+  {id:48,cat:'gps',ico:'🚗',brand:'Queclink',name:'GPS GV310LAU 4G',desc:'4G LTE, acelerómetro, OBD II compatible.',price:115,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:49,cat:'gps',ico:'🔌',brand:'Teltonika',name:'OBD Tracker TST100',desc:'Plug & Play OBD, 4G, configuración app.',price:75,badge:'b-hot',bTxt:'🔥 HOT'},
+  // UPS / BATERÍA
+  {id:50,cat:'ups',ico:'🔋',brand:'APC',name:'UPS Back-UPS 600VA',desc:'600VA, protección 6 salidas, USB.',price:75,badge:null},
+  {id:51,cat:'ups',ico:'⚡',brand:'CDP',name:'UPS CDP 1000VA LCD',desc:'1000VA, LCD, USB, 6 salidas reguladas.',price:95,badge:'b-hot',bTxt:'🔥 HOT'},
+  {id:52,cat:'ups',ico:'🔌',brand:'APC',name:'UPS SmartUPS 1500VA',desc:'1500VA, red inteligente, 8 salidas, LCD.',price:295,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:53,cat:'ups',ico:'🔋',brand:'Powervar',name:'UPS 2200VA Online',desc:'UPS On-line 2200VA, doble conversión, RS-232.',price:480,badge:'b-top',bTxt:'⭐ TOP'},
+  {id:54,cat:'ups',ico:'🔆',brand:'Genérico',name:'Batería Sellada 12V 7Ah',desc:'Batería AGM sellada 12V 7Ah para UPS/alarma.',price:18,badge:'b-sale',bTxt:'💥 OFERTA'},
+  // MOTOR PORTÓN
+  {id:55,cat:'motor',ico:'🚗',brand:'CAME',name:'Motor Corredizo BX-78',desc:'Motor corredizo, 800kg, 230V, 3m/min.',price:485,badge:'b-hot',bTxt:'🔥 HOT'},
+  {id:56,cat:'motor',ico:'🏠',brand:'FAAC',name:'Motor Batiente 402/24V',desc:'Motor batiente 24V, 2m hoja, kit completo.',price:395,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:57,cat:'motor',ico:'📡',brand:'NICE',name:'Control Remoto 433MHz x2',desc:'Control remoto rolling code, pack 2 uds.',price:22,badge:'b-sale',bTxt:'💥 OFERTA'},
+  {id:58,cat:'motor',ico:'🔌',brand:'Centurion',name:'Motor Corredizo D5-EVO',desc:'Motor 500kg, batería respaldo, Bluetooth.',price:520,badge:'b-top',bTxt:'⭐ TOP'},
+  // HERRAMIENTAS
+  {id:59,cat:'herramientas',ico:'🔧',brand:'Klein',name:'Crimpadora RJ-45 Cat6',desc:'Crimpadora profesional para RJ-45, Cat5/6.',price:28,badge:'b-hot',bTxt:'🔥 HOT'},
+  {id:60,cat:'herramientas',ico:'📏',brand:'Fluke',name:'Tester de Cable Cat6',desc:'Probador de red Cat5/6, 1 rastreador.',price:45,badge:null},
+  {id:61,cat:'herramientas',ico:'🔩',brand:'Greenlee',name:'Pelacables UTP/STP',desc:'Pelacables con cuchilla en V, anti-corte.',price:12,badge:'b-sale',bTxt:'💥 OFERTA'},
+  {id:62,cat:'herramientas',ico:'🔨',brand:'Klein',name:'Punch Down Tool 110/66',desc:'Herramienta de impacto para patch panel.',price:18,badge:null},
+  // COMPUTACIÓN / ELECTRÓNICA
+  {id:63,cat:'comp',ico:'💻',brand:'HP',name:'Switch No Gestionable 8P',desc:'Switch 8 puertos 10/100Mbps, plug & play.',price:18,badge:'b-sale',bTxt:'💥 OFERTA'},
+  {id:64,cat:'comp',ico:'🖥',brand:'Raspberry',name:'Raspberry Pi 4 Modelo B 4GB',desc:'Microcomputadora 4GB RAM, 4 núcleos, 4K.',price:75,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:65,cat:'comp',ico:'📟',brand:'Genérico',name:'Convertidor HDMI a VGA',desc:'Conversor activo HDMI a VGA, Full HD.',price:12,badge:null},
+  // PUBLICIDAD DIGITAL
+  {id:66,cat:'digital',ico:'📺',brand:'Samsung',name:'Pantalla LED Totem 43"',desc:'Pantalla LED 4K 43" para exterior/interior.',price:850,badge:'b-top',bTxt:'⭐ TOP'},
+  {id:67,cat:'digital',ico:'🖥',brand:'LG',name:'Monitor Señalización 32"',desc:'Panel IPS 32", brillo 500nits, 24/7 uso.',price:420,badge:'b-new',bTxt:'✨ NUEVO'},
+  {id:68,cat:'digital',ico:'📡',brand:'Genérico',name:'Media Player Android 4K',desc:'Android 11, 4K HDMI, Wi-Fi, gestión remota.',price:65,badge:null},
+  // REMATE
+  {id:69,cat:'remate',ico:'🔥',brand:'Hikvision',name:'Cámara Domo 2MP OFERTA',desc:'2MP, IR 20m, IP66. ¡Precio de liquidación!',price:35,old:75,badge:'b-sale',bTxt:'💥 -53%'},
+  {id:70,cat:'remate',ico:'🏷️',brand:'Dahua',name:'DVR 4 Canales REMATE',desc:'4 canales HD, 1HDD, USB. Último lote.',price:65,old:120,badge:'b-sale',bTxt:'💥 -46%'},
+  {id:71,cat:'remate',ico:'🔋',brand:'APC',name:'UPS 500VA LIQUIDACIÓN',desc:'UPS Back-UPS 500VA, caja abierta, funcional.',price:32,old:65,badge:'b-sale',bTxt:'💥 -51%'},
+  {id:72,cat:'remate',ico:'📡',brand:'TP-Link',name:'Access Point Exterior OFERTA',desc:'AP exterior 300Mbps, IP66, PoE. Showroom.',price:28,old:55,badge:'b-sale',bTxt:'💥 -49%'},
+];
+ 
+let cart = [];
+let curCat = 'todo', curSlide = 0, slTotal = 4, slTimer;
+ 
+// ══ RENDER PRODUCTS ══
+function renderProds(gridId, cat, countId, subtId, titleId) {
+  const grid = document.getElementById(gridId);
+  if(!grid) return;
+  grid.classList.add('fading');
+  setTimeout(() => {
+    const catNames = {todo:'Todos los Productos',camaras:'Cámaras de Seguridad',nvr:'Circuito Cerrado (CCTV)',alarmas:'Alarma de Intrusión',acceso:'Control de Acceso',cableado:'Cableado de Red',fibra:'Fibra Óptica',cerco:'Cerco Eléctrico',redes:'Redes y Telecomunicaciones',gps:'GPS Vehicular',ups:'Batería / UPS',motor:'Motor para Portón',herramientas:'Herramientas',comp:'Computación / Electrónica',digital:'Publicidad Digital Interactiva',remate:'Zona de Remate 🔥'};
+    let items = cat === 'todo' ? PRODS : PRODS.filter(p => p.cat === cat);
+    if(titleId) {
+      const t = document.getElementById(titleId);
+      if(t) t.innerHTML = cat==='todo' ? 'Productos <span class="hl-g">Destacados</span>' : `<span class="hl-g">${catNames[cat]||cat}</span>`;
+    }
+    if(subtId) {
+      const s = document.getElementById(subtId);
+      if(s) s.textContent = cat==='todo' ? 'Equipos de seguridad de las mejores marcas — precios en Panamá 2026' : `${items.length} productos disponibles en ${catNames[cat]||cat} — precios en Panamá 2026`;
+    }
+    if(countId) {
+      const c = document.getElementById(countId);
+      if(c) c.textContent = `${items.length} producto${items.length!==1?'s':''}`;
+    }
+    const ct = document.getElementById('prodCountTxt');
+    if(ct) ct.textContent = `Mostrando ${items.length} producto${items.length!==1?'s':''}`;
+    const ct2 = document.getElementById('prodCountTxt2');
+    if(ct2) ct2.textContent = `Mostrando ${items.length} producto${items.length!==1?'s':''}`;
+    grid.innerHTML = items.length === 0
+      ? '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);">No hay productos en esta categoría aún.</div>'
+      : items.map((p,i) => `
+      <div class="pcard" style="animation-delay:${i*0.035}s;">
+        ${p.badge ? `<span class="pbadge ${p.badge}">${p.bTxt}</span>` : ''}
+        <div class="p-img">
+          <span class="ico">${p.ico}</span>
+          <span class="p-brand">${p.brand}</span>
+        </div>
+        <div class="p-body">
+          <div class="p-cat">${{camaras:'Cámaras CCTV',nvr:'Grabador NVR/DVR',alarmas:'Alarmas',acceso:'Control Acceso',cableado:'Cableado',fibra:'Fibra Óptica',cerco:'Cerco Eléctrico',redes:'Redes Wi-Fi',gps:'GPS',ups:'UPS/Batería',motor:'Motor Portón',herramientas:'Herramientas',comp:'Computación',digital:'Digital',remate:'🔥 Remate'}[p.cat]||p.cat}</div>
+          <div class="p-name">${p.name}</div>
+          <div class="p-desc">${p.desc}</div>
+          <div class="p-foot">
+            <div>${p.old?`<span class="p-old">$${p.old}</span>`:''}
+              <div class="p-price">$${p.price.toFixed(2)}</div>
+            </div>
+            <button class="p-add" id="padd${p.id}" onclick="addToCart(${p.id})">+ Cotizar</button>
+          </div>
+        </div>
+      </div>`).join('');
+    grid.classList.remove('fading');
+  }, 140);
+}
+ 
+window.filterCat = function(cat, el) {
+  curCat = cat;
+  document.querySelectorAll('#prodFilter .pf-pill').forEach(p => p.classList.remove('on'));
+  if(el && el.classList) el.classList.add('on');
+  renderProds('prodGrid', cat, 'prodCount', 'prodSubt', 'prodTitle');
+  if(!document.getElementById('pg-home').classList.contains('active')) goPage('home');
+  setTimeout(() => {
+    const g = document.getElementById('prodGrid');
+    if(g) g.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }, 350);
+};
+ 
+window.filterCat2 = function(cat, el) {
+  document.querySelectorAll('#prodFilter2 .pf-pill').forEach(p => p.classList.remove('on'));
+  if(el) el.classList.add('on');
+  renderProds('prodGrid2', cat, 'prodCount2', null, null);
+};
+ 
+window.addToCart = function(id) {
+  const p = PRODS.find(x => x.id === id);
+  if(!p) return;
+  const ex = cart.find(x => x.id === id);
+  if(ex) ex.qty++; else cart.push({...p, qty:1});
+  const total = cart.reduce((a,c)=>a+c.qty,0);
+  document.getElementById('cartN').textContent = total;
+  const btn = document.getElementById('padd'+id);
+  if(btn) { btn.textContent='✅'; btn.classList.add('added'); setTimeout(()=>{btn.textContent='+ Cotizar';btn.classList.remove('added');},1200); }
+  toast(`✅ ${p.name} agregado a cotización`);
+  updateCotiz();
+};
+ 
+function updateCotiz() {
+  const cl = document.getElementById('cotizList');
+  const ct = document.getElementById('cotizTotal');
+  if(!cl) return;
+  if(cart.length===0){
+    cl.innerHTML='<div class="cotiz-empty">Tu cotización está vacía.<br/>Agrega productos desde el catálogo.</div>';
+    if(ct) ct.style.display='none';
+    return;
+  }
+  cl.innerHTML = cart.map(p => `
+    <div class="cotiz-item">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span style="font-size:1.5rem;">${p.ico}</span>
+        <div><div style="font-size:.88rem;font-weight:700;">${p.name}</div><div style="font-size:.72rem;color:var(--muted);">${p.brand}</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span style="font-size:.9rem;font-weight:900;color:var(--g);">$${p.price.toFixed(2)} x${p.qty}</span>
+        <span style="font-size:.9rem;font-weight:900;color:var(--text);">$${(p.price*p.qty).toFixed(2)}</span>
+        <button onclick="removeFromCart(${p.id})" style="padding:3px 8px;background:rgba(255,0,102,.1);border:1px solid rgba(255,0,102,.2);color:var(--pk);border-radius:4px;font-size:.7rem;cursor:pointer;">✕</button>
+      </div>
+    </div>`).join('');
+  const total = cart.reduce((a,c)=>a+(c.price*c.qty),0);
+  if(ct) { ct.textContent=`TOTAL: $${total.toFixed(2)}`; ct.style.display='block'; }
+}
+ 
+window.removeFromCart = function(id) {
+  cart = cart.filter(x=>x.id!==id);
+  document.getElementById('cartN').textContent = cart.reduce((a,c)=>a+c.qty,0);
+  updateCotiz();
+};
+ 
+// ══ PAGE NAVIGATION ══
+window.goPage = function(id) {
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const pg = document.getElementById('pg-'+id);
+  if(pg) pg.classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('act'));
+  const map={home:0,productos:1,servicios:2,clientes:3,contacto:4,noticias:5,factura:6,contacto:7};
+  if(map[id]!==undefined) document.querySelectorAll('.nav-item')[map[id]]?.classList.add('act');
+  if(id==='productos') renderProds('prodGrid2','todo','prodCount2',null,null);
+  if(id==='cotizador') updateCotiz();
+  window.scrollTo({top:0,behavior:'smooth'});
+};
+ 
+window.navClick = function(el, id) {
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('act'));
+  el.classList.add('act');
+  goPage(id);
+};
+ 
+// ══ AUTH MODAL ══
+window.openAuth = function(tab) {
+  document.getElementById('authModal').classList.add('open');
+  swTab(tab);
+};
+window.closeAuth = function() { document.getElementById('authModal').classList.remove('open'); };
+window.swTab = function(tab) {
+  document.getElementById('tabL').classList.toggle('on', tab==='login');
+  document.getElementById('tabR').classList.toggle('on', tab==='register');
+  document.getElementById('mfLogin').classList.toggle('on', tab==='login');
+  document.getElementById('mfReg').classList.toggle('on', tab==='register');
+  document.getElementById('mSub').textContent = tab==='login' ? 'Accede a tu cuenta de seguridad' : 'Crea tu cuenta gratis — solo 30 segundos';
+};
+document.addEventListener('click', e => {
+  if(e.target===document.getElementById('authModal')) closeAuth();
+  if(!e.target.closest('.user-wrap')) closeUD();
+});
+ 
+// ══ USER DROPDOWN ══
+window.toggleUD = function() { document.getElementById('userDD').classList.toggle('open'); };
+window.closeUD  = function() { document.getElementById('userDD').classList.remove('open'); };
+ 
+// ══ HERO SLIDER ══
+function goSl(n) {
+  const slides=document.querySelectorAll('.slide');
+  const dots=document.querySelectorAll('.sl-dot');
+  slides[curSlide].classList.remove('on'); dots[curSlide].classList.remove('on');
+  curSlide=((n%slTotal)+slTotal)%slTotal;
+  slides[curSlide].classList.add('on'); dots[curSlide].classList.add('on');
+}
+window.goSl=goSl;
+window.nextSl=()=>goSl(curSlide+1);
+window.prevSl=()=>goSl(curSlide-1);
+slTimer = setInterval(window.nextSl, 5500);
+ 
+// ══ SEARCH ══
+window.doSearch = function(q) {
+  if(q.length<2){renderProds('prodGrid',curCat,'prodCount','prodSubt','prodTitle');return;}
+  const res=PRODS.filter(p=>p.name.toLowerCase().includes(q.toLowerCase())||p.desc.toLowerCase().includes(q.toLowerCase())||p.brand.toLowerCase().includes(q.toLowerCase()));
+  const grid=document.getElementById('prodGrid');
+  const t=document.getElementById('prodTitle');
+  const s=document.getElementById('prodSubt');
+  const c=document.getElementById('prodCount');
+  const ct=document.getElementById('prodCountTxt');
+  if(t) t.innerHTML=`Resultados para: <span class="hl-e">"${q}"</span>`;
+  if(s) s.textContent=`${res.length} productos encontrados`;
+  if(c) c.textContent=`${res.length} resultado${res.length!==1?'s':''}`;
+  if(ct) ct.textContent=`Mostrando ${res.length} resultado${res.length!==1?'s':''}`;
+  if(!document.getElementById('pg-home').classList.contains('active')) goPage('home');
+  grid.innerHTML = res.length===0
+    ? '<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--muted);">No se encontraron productos para "'+q+'"</div>'
+    : res.map((p,i)=>`<div class="pcard" style="animation-delay:${i*0.035}s;">${p.badge?`<span class="pbadge ${p.badge}">${p.bTxt}</span>`:''}<div class="p-img"><span class="ico">${p.ico}</span><span class="p-brand">${p.brand}</span></div><div class="p-body"><div class="p-cat">${p.cat}</div><div class="p-name">${p.name}</div><div class="p-desc">${p.desc}</div><div class="p-foot"><div>${p.old?`<span class="p-old">$${p.old}</span>`:''}<div class="p-price">$${p.price.toFixed(2)}</div></div><button class="p-add" id="padd${p.id}" onclick="addToCart(${p.id})">+ Cotizar</button></div></div></div>`).join('');
+};
+ 
+// ══ TOAST ══
+window.toast = function(msg) {
+  const el=document.getElementById('toastEl');
+  el.textContent=msg; el.classList.add('show');
+  clearTimeout(el._t);
+  el._t=setTimeout(()=>el.classList.remove('show'),3500);
+};
+ 
+// ══ COPY PROTECT ══
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&['u','s','a'].includes(e.key.toLowerCase())) e.preventDefault();
+  if(e.key==='F12') e.preventDefault();
+});
+ 
+// ══ CAT STRIP CLICKS ══
+document.querySelectorAll('.cat-pill').forEach(p=>{
+  p.addEventListener('click',function(){
+    document.querySelectorAll('.cat-pill').forEach(x=>x.classList.remove('on'));
+    this.classList.add('on');
+  });
+});
+ 
+// ══ INIT ══
+renderProds('prodGrid','todo','prodCount','prodSubt','prodTitle');
+</script>
+</body>
+</html>
